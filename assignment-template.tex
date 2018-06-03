@@ -23,15 +23,6 @@
 \usepackage{rotating}
 \usepackage[graphicx]{realboxes}
 
-\newgantttimeslotformat{stardate}{%
-\def\decomposestardate##1.##2\relax{%
-\def\stardateyear{##1}\def\stardateday{##2}%
-}%
-\decomposestardate#1\relax%
-\pgfcalendardatetojulian{\stardateyear-01-01}{#2}%
-\advance#2 by-1\relax%
-\advance#2 by\stardateday\relax%
-}
 
 \backgroundsetup{
 color=black,
@@ -71,7 +62,7 @@ contents={
 	
 	\begin{multicols}{2}
 		
-		\noindent\textbf{\underline{INSTRUCTED BY:}} \\Mr. Chathura Vidana Gamage
+		\noindent\textbf{\underline{INSTRUCTED BY:}} \\Instructor's Name
 		
 		
 		\columnbreak
@@ -110,26 +101,25 @@ contents={
 \section{Title 1}
 
 \subsection{Title 1.1}
-
 \subsubsection{Title 1.1.1}
+\lipsum[1-20]
 \newpage
 \subsection{Title 1.2}
+\lipsum[1-20]
 \newpage
 \subsection{Title 1.3}
-
-
-
-
-
-
 \begin{multicols}{2}
+\lipsum[1-20]
 \end{multicols}
 \newpage
 \section{Testing 2}
+\lipsum[1-20]
 \newpage
 \section{Testing 3}
+\lipsum[1-20]
 \newpage
 \section{Testing 4}
+\lipsum[1-20]
 
 
 
