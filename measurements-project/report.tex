@@ -4,6 +4,7 @@
 \usepackage[T1]{fontenc}
 
 
+\usepackage{fancyvrb}
 \usepackage{multicol}
 \usepackage{lipsum}
 \usepackage{setspace}
@@ -21,6 +22,43 @@
 \usepackage{pgfgantt}
 \usepackage{rotating}
 \usepackage[graphicx]{realboxes}
+\usepackage{tocloft}
+\usepackage{xcolor}
+\usepackage{listings}
+
+\definecolor{mGreen}{rgb}{0,0.6,0}
+\definecolor{mGray}{rgb}{0.5,0.5,0.5}
+\definecolor{mPurple}{rgb}{0.58,0,0.82}
+\definecolor{backgroundColour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{CStyle}{
+    backgroundcolor=\color{backgroundColour},   
+    commentstyle=\color{mGreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{mGray},
+    stringstyle=\color{mPurple},
+    basicstyle=\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=none,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2,
+    language=C
+}
+
+
+
+\newcommand{\listappendicesname}{Appendices}
+\newlistof{appendices}{apc}{\listappendicesname}
+\newcommand{\appendices}[1]{\addcontentsline{apc}{appendices}{#1}}
+
+\newcommand{\newappendix}[1]{\section*{#1}\appendices{#1}}
+
 
 \usepackage{sectsty}
 \usepackage{float}
@@ -150,11 +188,16 @@ In performing our assignment, we had to take the help and guideline of some resp
 
 
 \newpage 
+\renewcommand{\baselinestretch}{1}\normalsize
 \tableofcontents
+\renewcommand{\baselinestretch}{1.5}\normalsize
 
 \listoffigures
  
 \listoftables
+
+\listofappendices
+
 \newpage
 
 \pagenumbering{arabic}
@@ -199,7 +242,33 @@ The Keyes KY-040 rotary encoder is a rotary input device (as in knob) that provi
 
 
 \item A disk (with a diameter of 4cm)
-\item Arduino Nano v3( See Appendix 1)
+\item Arduino Nano v3( See Appendix 1)\\
+
+
+\textbf{\underline{Powering:}}\\
+There are totally three ways by which the Nano can power.\\
+\textbf{USB Jack:} Connect the mini USB jack to a phone charger or computer through a cable and it will draw power required for the board to function \\
+\textbf{Vin Pin:} The Vin pin can be supplied with a unregulated 6-12V to power the board. The on-board voltage regulator regulates it to +5V\\
+\textbf{+5V Pin:} If we have a regulated +5V supply then it can directly provide this to the +5V pin of the Arduino.\\
+\textbf{\underline{Input/Output:}}
+
+There are totally 14 digital Pins and 8 Analog pins on Nano board. The digital pins can be used to interface sensors by using them as input pins or drive loads by using them as output pins. A simple function like pinMode() and digitalWrite() can be used to control their operation. The operating voltage is 0V and 5V for digital pins. The analog pins can measure analog voltage from 0V to 5V using any of the 8 Analog pins using a simple function like analogRead()
+These pins apart from serving their purpose can also be used for special purposes which are discussed below:
+\begin{itemize}
+\item \textbf{Serial Pins 0 (Rx) and 1 (Tx):} Rx and Tx pins are used to receive and transmit TTL serial data. They are connected with the corresponding ATmega328P USB to TTL serial chip.
+\item \textbf{External Interrupt Pins 2 and 3:} These pins can be configured to trigger an interrupt on a low value, a rising or falling edge, or a change in value.
+\item \textbf{PWM Pins 3, 5, 6, 9 and 11:} These pins provide an 8-bit PWM output by using analogWrite() function.
+\item \textbf{SPI Pins 10 (SS), 11 (MOSI), 12 (MISO) and 13 (SCK):} These pins are used for SPI communication.
+
+\item \textbf{In-built LED Pin 13:} This pin is connected with an built-in LED, when pin 13 is HIGH ? LED is on and when pin 13 is LOW, its off.
+\item \textbf{I2C A4 (SDA) and A5 (SCL):} Used for IIC communication using Wire library.
+\item \textbf{AREF:} Used to provide reference voltage for analog inputs with analogReference() function.
+\item \textbf{Reset Pin:} Making this pin LOW, resets the microcontroller.
+These special functions and their respective pins are illustrated in the Arduino Nano Pin Diagram shown below.
+\end{itemize}
+
+
+
 \item Output - 7-segment 4-character display [\cite[see Appendix]{display:2015}]
 \\Seven-segment displays are used to display the digits in digital watches, calculators, clocks, measuring instruments and digital counters, etc. Generally, LCD and LED segments provide the display output of numerical numbers and characters.
 \item A 9V battery
@@ -208,6 +277,11 @@ The Keyes KY-040 rotary encoder is a rotary input device (as in knob) that provi
 \item A plastic container to assemble
 
 \end{itemize}
+
+
+
+
+
 
 \newpage
 \begin{figure}[h]
@@ -245,33 +319,6 @@ The Keyes KY-040 rotary encoder is a rotary input device (as in knob) that provi
 \newpage
 
 
-\textbf\underline{{Powering}}
-There are totally three ways by which the Nano can power.\\
-\textbf{USB Jack:} Connect the mini USB jack to a phone charger or computer through a cable and it will draw power required for the board to function \\
-\textbf{Vin Pin:} The Vin pin can be supplied with a unregulated 6-12V to power the board. The on-board voltage regulator regulates it to +5V\\
-\textbf{+5V Pin:} If we have a regulated +5V supply then it can directly provide this to the +5V pin of the Arduino.\\
-
-
-
-\textbf{\underline{Input/Output:}}
-
-There are totally 14 digital Pins and 8 Analog pins on Nano board. The digital pins can be used to interface sensors by using them as input pins or drive loads by using them as output pins. A simple function like pinMode() and digitalWrite() can be used to control their operation. The operating voltage is 0V and 5V for digital pins. The analog pins can measure analog voltage from 0V to 5V using any of the 8 Analog pins using a simple function like analogRead()
-These pins apart from serving their purpose can also be used for special purposes which are discussed below:
-\begin{itemize}
-\item \textbf{Serial Pins 0 (Rx) and 1 (Tx):} Rx and Tx pins are used to receive and transmit TTL serial data. They are connected with the corresponding ATmega328P USB to TTL serial chip.
-\item \textbf{External Interrupt Pins 2 and 3:} These pins can be configured to trigger an interrupt on a low value, a rising or falling edge, or a change in value.
-\item \textbf{PWM Pins 3, 5, 6, 9 and 11:} These pins provide an 8-bit PWM output by using analogWrite() function.
-\item \textbf{SPI Pins 10 (SS), 11 (MOSI), 12 (MISO) and 13 (SCK):} These pins are used for SPI communication.
-
-\item \textbf{In-built LED Pin 13:} This pin is connected with an built-in LED, when pin 13 is HIGH ? LED is on and when pin 13 is LOW, its off.
-\item \textbf{I2C A4 (SDA) and A5 (SCL):} Used for IIC communication using Wire library.
-\item \textbf{AREF:} Used to provide reference voltage for analog inputs with analogReference() function.
-\item \textbf{Reset Pin:} Making this pin LOW, resets the microcontroller.
-These special functions and their respective pins are illustrated in the Arduino Nano Pin Diagram shown above.
-\end{itemize}
-
-
-
 
 \section{Theory}
 
@@ -291,7 +338,7 @@ The design is absolutely simplified to reduce costs. As a replacement for a mete
 Apart from direction, position can also be monitored with a quadrature encoder by producing another signal known as the "marker", "index" or "Z channel". This Z signal, produced once per complete revolution of the quadrature encoder, is often used to locate a specific position during a 360° revolution.
 
 \section{ Block Diagram}
-\begin{figure}[h]
+\begin{figure}[H]
 \includegraphics[width=0.9\textwidth]{blockdiagram}
 \caption{Block Diagram}
 \end{figure}
@@ -318,7 +365,7 @@ Apart from direction, position can also be monitored with a quadrature encoder b
 
 
 \newpage
-\section{Appendix 1}
+\newappendix{Appendix 1}
 
 \begin{table}[H]
 \centering
@@ -370,7 +417,7 @@ AREF                & AREF                                       & To provide re
 
 
 
-\begin{table}
+\begin{table}[H]
 \centering
 \caption{Arduino Nano Specification}
 \arrayrulecolor{black}
@@ -402,9 +449,13 @@ Communication                         & IIC, SPI, USART                         
 \end{tabular}
 \arrayrulecolor{black}
 \end{table}
+\newpage
 
 
-\begin[language=Octave]{lstlisting}
+\newappendix{Appendix 2}
+
+
+\begin{lstlisting}[style=CStyle]
 #include <Arduino.h>
 #include <TM1637Display.h>
 
@@ -456,9 +507,7 @@ void loop() {
   }
   aLastState = aState; // Updates the previous state of the outputA with the current state
 }
-\end{lslisting}
-
-
+\end{lstlisting}
 
 
 \newpage
