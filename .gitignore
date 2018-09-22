@@ -1,4 +1,6 @@
 *
 !.gitignore
 !*.tex
+!*.bib
 !*.pdf
+!measurements-project
