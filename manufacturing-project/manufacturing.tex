@@ -20,10 +20,15 @@
 \usepackage{csquotes}
 \usepackage{wrapfig}
 \usepackage{background}
+\usepackage{longtable}
+\usepackage[acronym]{glossaries}
 \usetikzlibrary{calc}
 
 \setmainfont[Ligatures=TeX]{Times New Roman}
 \renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+\newcommand{\listappendicesname}{Appendices}
+\newlistof{appendices}{apc}{\listappendicesname}
+\newcommand{\appendices}[1]{\addcontentsline{apc}{appendices}{#1}}
 
 
 \backgroundsetup{
@@ -38,6 +43,30 @@
         \end{tikzpicture}
     }
 }
+\usepackage[acronym]{glossaries}
+
+
+
+% abbreviations:
+\newacronym{ny}{NY}{New York}
+\newacronym{la}{LA}{Los Angeles}
+\newacronym{un}{UN}{United Nations}
+
+% nomenclature:
+\newglossaryentry{angelsperarea}{
+  name = $a$ ,
+  description = The number of angels per unit area,
+}
+\newglossaryentry{numofangels}{
+  name = $N$ ,
+  description = The number of angels per needle point
+}
+\newglossaryentry{areaofneedle}{
+  name = $A$ ,
+  description = The area of the needle point
+}
+
+\makeglossaries
 
 
 \begin{document}
@@ -70,17 +99,17 @@
 
             \textbf{\uppercase{\underline{Name}}}       &
             \textbf{\uppercase{\fontsize{12}{18} \selectfont {:}}}
-            {\fontsize{12}{18} \selectfont {<Name>}}      \\
+            {\fontsize{12}{18} \selectfont {B Gnanakeethan}}      \\
 
             \vspace{6pt}
             \textbf{\uppercase{\underline{Department}}} &
             \textbf{\uppercase{\fontsize{12}{18} \selectfont {:}}}
-            {\fontsize{12}{18} \selectfont {<Department>}}\\
+            {\fontsize{12}{18} \selectfont {Engineering Tech.}}\\
 
             \vspace{6pt}
             \textbf{\uppercase{\underline{Index No}}}   &
             \textbf{\uppercase{\fontsize{12}{18} \selectfont {:}}}
-            {\fontsize{12}{18} \selectfont {<Index No>}}  \\
+            {\fontsize{12}{18} \selectfont {EGT/16/00037}}  \\
 
             %\customize as you wish
             %\vspace{6pt}
@@ -98,7 +127,14 @@
 \pagenumbering{roman}
 \section*{Acknowledgements}
 \tableofcontents
+\newpage
 \listoffigures
+\newpage
+\listoftables
+\newpage
+\printglossary[type=\acronymtype,title=Abbreviations]
+\newpage
+\printglossary[title=Nomenclature]
 
 \newpage
 \pagenumbering{arabic}
@@ -106,8 +142,14 @@
 %\addcontentsline{toc}{section}{Unnumbered Section}
 
 \newpage
-\lipsum[1-40]
 
+\gls{ny}, \gls{la} and \gls{un} are abbreviations whereas
+\gls{angelsperarea}, \gls{numofangels} and \gls{areaofneedle} are part of the
+nomenclature
+
+\printglossary[type=\acronymtype,title=Abbreviations]
+
+\printglossary[title=Nomenclature]
 
 
 
