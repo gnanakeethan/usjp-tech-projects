@@ -23,12 +23,13 @@
 \usepackage{longtable}
 \usepackage[acronym]{glossaries}
 \usetikzlibrary{calc}
-
+\usepackage[
+    backend=biber,
+    style=ieee,
+]{biblatex}
+\addbibresource{manufacturing.bib}
 \setmainfont[Ligatures=TeX]{Times New Roman}
 \renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
-\newcommand{\listappendicesname}{Appendices}
-\newlistof{appendices}{apc}{\listappendicesname}
-\newcommand{\appendices}[1]{\addcontentsline{apc}{appendices}{#1}}
 
 
 \backgroundsetup{
@@ -43,30 +44,6 @@
         \end{tikzpicture}
     }
 }
-\usepackage[acronym]{glossaries}
-
-
-
-% abbreviations:
-\newacronym{ny}{NY}{New York}
-\newacronym{la}{LA}{Los Angeles}
-\newacronym{un}{UN}{United Nations}
-
-% nomenclature:
-\newglossaryentry{angelsperarea}{
-  name = $a$ ,
-  description = The number of angels per unit area,
-}
-\newglossaryentry{numofangels}{
-  name = $N$ ,
-  description = The number of angels per needle point
-}
-\newglossaryentry{areaofneedle}{
-  name = $A$ ,
-  description = The area of the needle point
-}
-
-\makeglossaries
 
 
 \begin{document}
@@ -91,7 +68,7 @@
     \begin{multicols}{2}
         \noindent\textbf{\underline{INSTRUCTED BY:}} \\ Mr. Isuru Udayanga\\
 
-        \columnbreak
+        \columnbreak;
 
 
         \begin{tabular}{ll}
@@ -111,12 +88,10 @@
             \textbf{\uppercase{\fontsize{12}{18} \selectfont {:}}}
             {\fontsize{12}{18} \selectfont {EGT/16/00037}}  \\
 
-            %\customize as you wish
-            %\vspace{6pt}
-            %\textbf{\uppercase{\underline{Anything}}}   &
-            %\textbf{\uppercase{\fontsize{12}{18} \selectfont {:}}}
-            %{\fontsize{12}{18} \selectfont {<Anything>}}  \\
-
+            \vspace{6pt}
+            \textbf{\uppercase{\underline{Date of Sub}}}   &
+            \textbf{\uppercase{\fontsize{12}{18} \selectfont {:}}}
+            {\fontsize{12}{18} \selectfont {14/12/2018}}  \\
 
         \end{tabular}
     \end{multicols}
@@ -125,35 +100,63 @@
 
 
 \pagenumbering{roman}
-\section*{Acknowledgements}
+
+\newpage
 \tableofcontents
+
 \newpage
 \listoffigures
+
 \newpage
 \listoftables
-\newpage
-\printglossary[type=\acronymtype,title=Abbreviations]
-\newpage
-\printglossary[title=Nomenclature]
 
 \newpage
 \pagenumbering{arabic}
 \setcounter{page}{1}
-%\addcontentsline{toc}{section}{Unnumbered Section}
+
+
+\section{Introduction}
+
+A whiteboard eraser is usually used in many places. It is available in many sizes as well. It usually consists of two parts namely, a plastic grip and a soft area for cleaning. However some erasers have magnetic plates built into the surface below the soft area. The magnetic plates allow the erasers to hung on whiteboards made of iron compositions. 
+
+These whiteboard erasers’ plastic grips are usually manufactured using Plastic moulding. The soft-part is made by cutting a solidified soft-rubber foam or a soft cloth material. The magnetic plate is usually made of iron compositions. 
+
+
+
+\newpage
+\section{Plasic Cavity}
+
+The plastic cavity is usually made using plastic moulding process. The process involves the following steps. 
+
+\begin{enumerate}
+    \item Fabrication of mould for testing
+    \item Production Test
+    \item Refining the mould designs
+    \item Creating of die for mass production.
+    \item Production of the part
+\end{enumerate}
+
+
+\subsection{Fabrication of Mould for testing}
+
+The mould design would be usually made out of hard materials. The moulds for the process of plastic injection moulding is usually manufactured using CNC Machines (Electric Discharge Machining, Lathe, Milling). Typically these are made using hardened steel, pre-hardened steel, aluminium, and/or beryllium-copper alloy.
+
+\subsection{Production Test}
+
+In this process the injection mould is tested by creating a small set of production grade Plastic cavities. Eventhough it may seem unnecessary to manufacture and test, due to the large cost associated with this step. It will be cost-effective than manufacturing a faulty product.
+
+\subsection{Mould Design Refinement}
+
+The mould is redefined with feedback from the initially manufactured test products. The process repeats the production test until desired quality is achieved.
+
+\subsection{Mould for mass production}
+
+A new mould is then created for mass production using the design elements achieved earlier. The mould manufacturing process is same as previous, however the materials are changed to more durable ones. Thus hardened steel is a viable material for mould making. 
+\cite{ERMMotors}
+
 
 \newpage
 
-\gls{ny}, \gls{la} and \gls{un} are abbreviations whereas
-\gls{angelsperarea}, \gls{numofangels} and \gls{areaofneedle} are part of the
-nomenclature
+\printbibliography
 
-\printglossary[type=\acronymtype,title=Abbreviations]
-
-\printglossary[title=Nomenclature]
-
-
-
-\addcontentsline{toc}{section}{References}
-\bibliography{manufacturing}{}
-\bibliographystyle{plain}
 \end{document}
