@@ -8,6 +8,7 @@
 \usepackage{fontspec}
 \usepackage{tocloft}
 \usepackage[nottoc,numbib]{tocbibind}
+\usepackage{fancyhdr}
 \usepackage{fancybox} 
 \usepackage{setspace}
 \usepackage{ccicons}
@@ -39,6 +40,14 @@
 \setmainfont[Ligatures=TeX]{Times New Roman}
 \renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
 
+
+% Turn on the style
+\pagestyle{fancy}
+% Clear the header and footer
+\fancyhead{}
+\fancyfoot{}
+% Set the right side of the footer to be the page number
+\fancyfoot[R]{\thepage}
 
 \backgroundsetup{
     color=black,
@@ -72,7 +81,7 @@
 \fontsize{16pt}{24}\selectfont \textbf{By}\\[0.5cm]
 \fontsize{12pt}{12}\selectfont {
 }
-\vspace{5cm}
+\vspace{1.5cm}
 \fontsize{12pt}{12}\selectfont \textbf { Gnanakeethan Balasubramaniam \\ EGT/16/00037}\\[0.5cm]
 
 
@@ -80,7 +89,7 @@
 \fontsize{12pt}{12}\selectfont \textbf {Department of Engineering Technology \\ Faculty of Technology\\University of Sri Jayewardenepura\\ Sri Lanka}\\[0.5cm]
 }
 
-\vfill % Fill the rest of the page with whitespace
+%\vfill % Fill the rest of the page with whitespace
 
 \end{titlepage}
 
@@ -218,6 +227,5 @@ Adhesive material is then applied on the inside of the plastic cavity where the 
 \clearpage
 \addcontentsline{toc}{section}{References}
 \printbibliography
-\afterpage{\blankpage}
 
 \end{document}
