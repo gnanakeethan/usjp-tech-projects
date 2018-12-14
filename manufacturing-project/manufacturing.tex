@@ -3,7 +3,7 @@
 \usepackage[english]{babel}
 \usepackage[T1]{fontenc}
 \usepackage{multicol}
-\usepackage[a4paper,top=20mm,left=30mm,right=15mm,bottom=15mm]{geometry}
+\usepackage[a4paper,top=25mm,left=40mm,right=40mm,bottom=25mm]{geometry}
 \usepackage[monochrome]{color}
 \usepackage{fontspec}
 \usepackage{tocloft}
@@ -21,7 +21,6 @@
 \usepackage{tikz}
 \usepackage{csquotes}
 \usepackage{wrapfig}
-\usepackage{background}
 \usepackage{longtable}
 \usepackage[acronym]{glossaries}
 \usetikzlibrary{calc}
@@ -49,23 +48,12 @@
 % Set the right side of the footer to be the page number
 \fancyfoot[R]{\thepage}
 
-\backgroundsetup{
-    color=black,
-    scale=1,
-    opacity=1,
-    angle=0,
-    contents={
-        \begin{tikzpicture}
-            \draw [line width=0.75pt] ($ (current page.north west) + (2.5cm,-1cm) $) rectangle ($ (current page.south east) + (-1cm,1cm) $);
-            \draw [line width=0.00pt] ($ (current page.north west) + (0.1cm,0.1cm) $) rectangle    ($ (current page.south east) + (0.1cm,0.1cm) $); 
-        \end{tikzpicture}
-    }
-}
-
-
 \begin{document}
 
 \begin{titlepage}
+\begin{tikzpicture}[remember picture, overlay]
+  \draw[line width = 1pt] ($(current page.north west) + (25mm,-10mm)$) rectangle ($(current page.south east) + (-25mm,10mm)$);
+\end{tikzpicture}
 
 \begin{flushright}
 %\textbf{\uppercase{\fontsize{12}{18} \selectfont {Group No: E2}}}
@@ -78,15 +66,19 @@
 \fontsize{16pt}{24}\selectfont \textbf{Project Report}\\[0.5cm]
 \fontsize{16pt}{24}\selectfont \textbf{EGT 41206}\\[0.75cm]
 \fontsize{24pt}{30}\selectfont \textbf{\uppercase{Whiteboard Eraser}}\\[1.5cm]
+\fontsize{16}{24}\selectfont \textbf{\uppercase{Manufacturing Technology}}\\[1.5cm]
 \fontsize{16pt}{24}\selectfont \textbf{By}\\[0.5cm]
 \fontsize{12pt}{12}\selectfont {
 }
-\vspace{1.5cm}
+\vspace*{\fill}
 \fontsize{12pt}{12}\selectfont \textbf { Gnanakeethan Balasubramaniam \\ EGT/16/00037}\\[0.5cm]
 
 
 \vspace*{\fill}
-\fontsize{12pt}{12}\selectfont \textbf {Department of Engineering Technology \\ Faculty of Technology\\University of Sri Jayewardenepura\\ Sri Lanka}\\[0.5cm]
+\fontsize{12pt}{12}\selectfont \textbf {Department of Engineering Technology \\ Faculty of Technology\\University of Sri Jayewardenepura\\ Sri Lanka \\ }
+\vspace*{\fill}
+
+\today
 }
 
 %\vfill % Fill the rest of the page with whitespace
@@ -103,7 +95,7 @@
 \newpage
 \pagenumbering{arabic}
 \setcounter{page}{1}
-
+\setstretch{1.5}
 
 \section{Introduction}
 
