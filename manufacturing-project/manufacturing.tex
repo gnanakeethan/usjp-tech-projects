@@ -23,11 +23,18 @@
 \usepackage{longtable}
 \usepackage[acronym]{glossaries}
 \usetikzlibrary{calc}
+\usepackage{float}
 \usepackage[
     backend=biber,
     style=ieee,
 ]{biblatex}
 \addbibresource{manufacturing.bib}
+\usepackage{afterpage}
+\newcommand\blankpage{%
+    \null
+    \thispagestyle{empty}%
+    \addtocounter{page}{-1}%
+    \newpage}
 \setmainfont[Ligatures=TeX]{Times New Roman}
 \renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
 
@@ -48,55 +55,55 @@
 
 \begin{document}
 
-\begin{titlepage}
+%\begin{titlepage}
 
 
-    %ASSIGNMENT NO
-    \begin{flushright}
-        %\textbf{\uppercase{\fontsize{12}{18} \selectfont {Practical No: 01}}}
-    \end{flushright}
+    %%ASSIGNMENT NO
+    %\begin{flushright}
+        %%\textbf{\uppercase{\fontsize{12}{18} \selectfont {Practical No: 01}}}
+    %\end{flushright}
 
 
-    \vspace*{\fill}
-    \begin{center}
-        \uppercase{\fontsize{30}{45}\selectfont \ul{Whiteboard Eraser}}\\
-        \uppercase{\fontsize{20}{30}\selectfont \ul{Manufacturing Technology Report}}
-    \end{center}
-    \vfill % equivalent to \vspace{\fill}
+    %\vspace*{\fill}
+    %\begin{center}
+        %\uppercase{\fontsize{30}{45}\selectfont \ul{Whiteboard Eraser}}\\
+        %\uppercase{\fontsize{20}{30}\selectfont \ul{Manufacturing Technology Report}}
+    %\end{center}
+    %\vfill % equivalent to \vspace{\fill}
 
 
-    \begin{multicols}{2}
-        \noindent\textbf{\underline{INSTRUCTED BY:}} \\ Mr. Isuru Udayanga\\
+    %\begin{multicols}{2}
+        %\noindent\textbf{\underline{INSTRUCTED BY:}} \\ Mr. Isuru Udayanga\\
 
-        \columnbreak;
+        %\columnbreak;
 
 
-        \begin{tabular}{ll}
-            \vspace{6pt}
+        %\begin{tabular}{ll}
+            %\vspace{6pt}
 
-            \textbf{\uppercase{\underline{Name}}}       &
-            \textbf{\uppercase{\fontsize{12}{18} \selectfont {:}}}
-            {\fontsize{12}{18} \selectfont {B Gnanakeethan}}      \\
+            %\textbf{\uppercase{\underline{Name}}}       &
+            %\textbf{\uppercase{\fontsize{12}{18} \selectfont {:}}}
+            %{\fontsize{12}{18} \selectfont {B Gnanakeethan}}      \\
 
-            \vspace{6pt}
-            \textbf{\uppercase{\underline{Department}}} &
-            \textbf{\uppercase{\fontsize{12}{18} \selectfont {:}}}
-            {\fontsize{12}{18} \selectfont {Engineering Tech.}}\\
+            %\vspace{6pt}
+            %\textbf{\uppercase{\underline{Department}}} &
+            %\textbf{\uppercase{\fontsize{12}{18} \selectfont {:}}}
+            %{\fontsize{12}{18} \selectfont {Engineering Tech.}}\\
 
-            \vspace{6pt}
-            \textbf{\uppercase{\underline{Index No}}}   &
-            \textbf{\uppercase{\fontsize{12}{18} \selectfont {:}}}
-            {\fontsize{12}{18} \selectfont {EGT/16/00037}}  \\
+            %\vspace{6pt}
+            %\textbf{\uppercase{\underline{Index No}}}   &
+            %\textbf{\uppercase{\fontsize{12}{18} \selectfont {:}}}
+            %{\fontsize{12}{18} \selectfont {EGT/16/00037}}  \\
 
-            \vspace{6pt}
-            \textbf{\uppercase{\underline{Date of Sub}}}   &
-            \textbf{\uppercase{\fontsize{12}{18} \selectfont {:}}}
-            {\fontsize{12}{18} \selectfont {14/12/2018}}  \\
+            %\vspace{6pt}
+            %\textbf{\uppercase{\underline{Date of Sub}}}   &
+            %\textbf{\uppercase{\fontsize{12}{18} \selectfont {:}}}
+            %{\fontsize{12}{18} \selectfont {14/12/2018}}  \\
 
-        \end{tabular}
-    \end{multicols}
+        %\end{tabular}
+    %\end{multicols}
 
-\end{titlepage}
+%\end{titlepage}
 
 
 \pagenumbering{roman}
@@ -104,6 +111,7 @@
 \newpage
 \tableofcontents
 
+\listoffigures
 \newpage
 \pagenumbering{arabic}
 \setcounter{page}{1}
@@ -153,6 +161,11 @@ A new mould is then created for mass production using the design elements achiev
 
 The part is then mass produced using industrial injection moulding machines.Usually the machines are capable of operating at speeds of manufacturing multiple parts at the same time.  
 
+\begin{figure}[H]
+\includegraphics[width=0.5\textwidth]{injection-moulding}
+\caption{Injection Moulding Process\cite{2018:InjectionImage}}
+\end{figure}
+
 
 \newpage
 
@@ -185,11 +198,6 @@ However the velcro must allow seeping of the liquids through itself in order to 
 
 
 
-\newpage
-
-\newpage
-
-
 \section{Assembly of Rubber Core and Magnetized Sheet}
 
 \subsection{Procurement of Magnetized Steel Sheet Cuts}
@@ -210,11 +218,15 @@ Thereafter the final assembly is done between the components completed before.
 
 \subsection{Fixation of Parts}
 Adhesive material is then applied on the inside of the plastic cavity where the plastic cavity and the rubber core meet. Usually to the inner-sidewalls of a whiteboard eraser. The fixing of parts is done by forcing the soft-rubber core into the plastic cavity. 
-
-
+\begin{figure}[h]
+\includegraphics[width=1\textwidth]{whiteboard-magnetic}
+\caption{Magnetic Whiteboard Eraser}
+\end{figure}
+\newpage
 
 \clearpage
 \addcontentsline{toc}{section}{References}
 \printbibliography
+\afterpage{\blankpage}
 
 \end{document}
