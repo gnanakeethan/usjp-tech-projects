@@ -9,6 +9,7 @@
 \usepackage{tocloft}
 \usepackage[nottoc,numbib]{tocbibind}
 \usepackage{fancybox} 
+\usepackage{setspace}
 \usepackage{ccicons}
 \usepackage{anyfontsize}
 \usepackage{lipsum}
@@ -55,55 +56,33 @@
 
 \begin{document}
 
-%\begin{titlepage}
+\begin{titlepage}
+
+\begin{flushright}
+%\textbf{\uppercase{\fontsize{12}{18} \selectfont {Group No: E2}}}
+\end{flushright}
 
 
-    %%ASSIGNMENT NO
-    %\begin{flushright}
-        %%\textbf{\uppercase{\fontsize{12}{18} \selectfont {Practical No: 01}}}
-    %\end{flushright}
+\center % Center everything on the page
+{\setstretch{1.2}
+\includegraphics[width=2in,keepaspectratio]{logo.png}\\[0.5cm]
+\fontsize{16pt}{24}\selectfont \textbf{Project Report}\\[0.5cm]
+\fontsize{16pt}{24}\selectfont \textbf{EGT 41206}\\[0.75cm]
+\fontsize{24pt}{30}\selectfont \textbf{\uppercase{Whiteboard Eraser}}\\[1.5cm]
+\fontsize{16pt}{24}\selectfont \textbf{By}\\[0.5cm]
+\fontsize{12pt}{12}\selectfont {
+}
+\vspace{5cm}
+\fontsize{12pt}{12}\selectfont \textbf { Gnanakeethan Balasubramaniam \\ EGT/16/00037}\\[0.5cm]
 
 
-    %\vspace*{\fill}
-    %\begin{center}
-        %\uppercase{\fontsize{30}{45}\selectfont \ul{Whiteboard Eraser}}\\
-        %\uppercase{\fontsize{20}{30}\selectfont \ul{Manufacturing Technology Report}}
-    %\end{center}
-    %\vfill % equivalent to \vspace{\fill}
+\vspace*{\fill}
+\fontsize{12pt}{12}\selectfont \textbf {Department of Engineering Technology \\ Faculty of Technology\\University of Sri Jayewardenepura\\ Sri Lanka}\\[0.5cm]
+}
 
+\vfill % Fill the rest of the page with whitespace
 
-    %\begin{multicols}{2}
-        %\noindent\textbf{\underline{INSTRUCTED BY:}} \\ Mr. Isuru Udayanga\\
-
-        %\columnbreak;
-
-
-        %\begin{tabular}{ll}
-            %\vspace{6pt}
-
-            %\textbf{\uppercase{\underline{Name}}}       &
-            %\textbf{\uppercase{\fontsize{12}{18} \selectfont {:}}}
-            %{\fontsize{12}{18} \selectfont {B Gnanakeethan}}      \\
-
-            %\vspace{6pt}
-            %\textbf{\uppercase{\underline{Department}}} &
-            %\textbf{\uppercase{\fontsize{12}{18} \selectfont {:}}}
-            %{\fontsize{12}{18} \selectfont {Engineering Tech.}}\\
-
-            %\vspace{6pt}
-            %\textbf{\uppercase{\underline{Index No}}}   &
-            %\textbf{\uppercase{\fontsize{12}{18} \selectfont {:}}}
-            %{\fontsize{12}{18} \selectfont {EGT/16/00037}}  \\
-
-            %\vspace{6pt}
-            %\textbf{\uppercase{\underline{Date of Sub}}}   &
-            %\textbf{\uppercase{\fontsize{12}{18} \selectfont {:}}}
-            %{\fontsize{12}{18} \selectfont {14/12/2018}}  \\
-
-        %\end{tabular}
-    %\end{multicols}
-
-%\end{titlepage}
+\end{titlepage}
 
 
 \pagenumbering{roman}
