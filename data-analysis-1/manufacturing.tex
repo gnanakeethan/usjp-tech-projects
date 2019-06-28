@@ -1,0 +1,220 @@
+\documentclass[12pt,a4paper,oneside]{article}
+
+\usepackage[english]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{multicol}
+\usepackage[a4paper,top=25mm,left=25mm,right=10mm,bottom=25mm]{geometry}
+\usepackage[monochrome]{color}
+\usepackage{fontspec}
+\usepackage{background}
+\usepackage{tocloft}
+\usepackage[nottoc,numbib]{tocbibind}
+\usepackage{fancyhdr}
+\usepackage{fancybox} 
+\usepackage{setspace}
+\usepackage{ccicons}
+\usepackage{anyfontsize}
+\usepackage{lipsum}
+\usepackage{indentfirst}
+\usepackage{soul}
+\usepackage[hidelinks]{hyperref}
+\usepackage{mathtools}   
+\usepackage{tikz}
+\usepackage{csquotes}
+\usepackage{wrapfig}
+\usepackage{longtable}
+\usepackage[acronym]{glossaries}
+\usepackage{float}
+\usepackage{pgfplots}
+\usetikzlibrary{calc,positioning}
+\usepackage[
+    backend=biber,
+    style=ieee,
+]{biblatex}
+\addbibresource{manufacturing.bib}
+\usepackage{afterpage}
+\newcommand\blankpage{%
+    \null
+    \thispagestyle{empty}%
+    \addtocounter{page}{-1}%
+    \newpage}
+\setmainfont[Ligatures=TeX]{Times New Roman}
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+
+\pgfmathdeclarefunction{gauss}{2}{%
+    \pgfmathparse{1/(#2*sqrt(2*pi))*exp(-((x-#1)^2)/(2*#2^2))}%
+    }
+
+\pgfmathdeclarefunction{gaussnormal}{3}{%
+  \pgfmathparse{1/(#3*sqrt(2*pi))*exp(-((#1-#2)^2)/(2*#3^2))}%
+}
+
+% Turn on the style
+\pagestyle{fancy}
+% Clear the header and footer
+\fancyhead{}
+\fancyfoot{}
+% Set the right side of the footer to be the page number
+\fancyfoot[C]{\thepage}
+
+\backgroundsetup{
+color=black,
+scale=1,
+opacity=1,
+angle=0,
+contents={
+\begin{tikzpicture}
+\draw [line width=0.75pt] ($ (current page.north west) + (2.5cm,-1cm) $) rectangle ($ (current page.south east) + (-1cm,1cm) $);
+\draw [line width=1pt] ($ (current page.north west) + (0cm,-0cm) $) rectangle    ($ (current page.south east) + (-0cm,0cm) $); 
+\end{tikzpicture}
+}
+}
+
+\begin{document}
+
+
+\begin{titlepage}
+%\begin{tikzpicture}[remember picture, overlay]
+  %\draw[line width = 1pt] ($(current page.north west) + (25mm,-10mm)$) rectangle ($(current page.south east) + (-25mm,10mm)$);
+%\end{tikzpicture}
+
+\begin{flushright}
+%\textbf{\uppercase{\fontsize{12}{18} \selectfont {Group No: E2}}}
+\end{flushright}
+
+
+\center % Center everything on the page
+{\setstretch{1.5}
+\includegraphics[width=2in,keepaspectratio]{logo.png}\\[0.5cm]
+% \fontsize{16pt}{24}\selectfont \textbf{Project Report}\\[0.5cm]
+% \fontsize{16pt}{24}\selectfont \textbf{EGT 41206}\\[0.75cm]
+\fontsize{24pt}{30}\selectfont \textbf{\uppercase{Assignment - 1}}\\[1.5cm]
+\fontsize{16}{24}\selectfont \textbf{\uppercase{Introduction to Environmental Data Analysis}}\\[1.5cm]
+\fontsize{16pt}{24}\selectfont \textbf{By}\\[0.5cm]
+\fontsize{12pt}{12}\selectfont {
+}
+\vspace*{\fill}
+\fontsize{12pt}{12}\selectfont \textbf { Gnanakeethan Balasubramaniam \\ EGT/16/437}\\[0.5cm]
+
+
+\vspace*{\fill}
+\fontsize{12pt}{12}\selectfont \textbf {Department of Engineering Technology \\ Faculty of Technology\\University of Sri Jayewardenepura\\ Sri Lanka \\ }
+\vspace*{\fill}
+
+\today
+}
+
+%\vfill % Fill the rest of the page with whitespace
+
+\end{titlepage}
+
+
+\pagenumbering{roman}
+
+\newpage
+\pagenumbering{arabic}
+\setcounter{page}{1}
+\setstretch{1.5}
+\begin{tabular}{ | r | r | r | r | r | r | r | r | r | r | r | r | r | r | r | }
+    \hline
+    & \multicolumn{10}{|c|}{Measurements} & \multicolumn{3}{|c|}{Calculations} \\ \hline
+    \# & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & Mean & S.dev & S. err \\ \hline
+    1 & 33.2 & 35 & 25.5 & 23.6 & 41.8 & 27.3 & 31.8 & 31.4 & 26.4 & 33.4 & 30.94 & 5.41 & 1.71 \\ \hline
+    2 & 38.3 & 37.9 & 26.4 & 23.2 & 39.1 & 36.4 & 30 & 29.9 & 27.9 & 24.4 & 31.35 & 6.07 & 1.92 \\ \hline
+    3 & 33.2 & 35.2 & 30.6 & 22.5 & 24.7 & 25.5 & 28.7 & 33.6 & 24.6 & 29.3 & 28.79 & 4.37 & 1.38 \\ \hline
+    4 & 36.3 & 30.7 & 28.9 & 28 & 30 & 9 & 42.2 & 29.9 & 25.4 & 24 & 28.44 & 8.61& 2.72 \\ \hline
+    5 & 40.6 & 28.8 & 33.7 & 23.7 & 35.1 & 9.4 & 30.9 & 33.3 & 28.8 & 23.5 & 28.78 & 8.55& 2.7 \\ \hline
+    6 & 33.1 & 36.6 & 28.1 & 21.9 & 33.9 & 29.5 & 22.1 & 25.8 & 26 & 25.2 & 28.22 & 5 & 1.58 \\ \hline
+    7 & 37.5 & 27 & 35.2 & 12.9 & 35.7 & 37.3 & 36.8 & 28.3 & 27 & 23.3 & 30.1 & 7.98 & 2.52 \\ \hline
+    8 & 46.2 & 29.1 & 24 & 12.6 & 33.3 & 28.9 & 40.6 & 37.1 & 25.2 & 26.9 & 30.39 & 9.48 & 3 \\ \hline
+    9 & 33 & 33.2 & 25.6 & 14.7 & 36 & 27.5 & 31.4 & 35.9 & 27.7 & 27.5 & 29.25 & 6.3 & 1.99 \\ \hline
+    10 & 37.8 & 29 & 32.8 & 13.3 & 30.5 & 7.7 & 29 & 26.1 & 24.6 & 26.1 & 25.69 & 8.94 & 2.83 \\ \hline
+    11 & 41.6 & 30.2 & 23.8 & 17.9 & 32.1 & 30.6 & 5.9 & 25.7 & 24.8 &  & 25.84 & 9.97 & 3.15 \\ \hline
+    12 & 49.5 & 28.5 & 26.8 & 19.5 & 33.7 & 39.3 & 30.9 & 31.9 & 26.9 &  & 31.89 & 8.55 & 2.7 \\ \hline
+    13 & 36 & 34.8 & 23.3 & 36.9 & 30.5 & 29.3 & 33.2 & 28.3 & 23.1 &  & 30.6 & 5.12 & 1.62 \\ \hline
+    14 & 45.7 & 26.7 & 33.3 & 38.8 & 30.9 & 37 & 38.1 & 32.6 & 24.9 &  & 34.22 & 6.46 & 2.04 \\ \hline
+\end{tabular}
+
+
+\begin{tabular}{ | r | r | r | r | r | r | r | r | r | r | }
+\hline
+	5.108 & 16.484 & 29.594 & 53.876 & 117.94 & 13.25 & 0.74 & 0.212 & 20.612 & 6.052 \\ \hline
+	48.303 & 42.903 & 24.502 & 66.422 & 60.063 & 25.503 & 1.822 & 2.102 & 11.902 & 48.302 \\ \hline
+	19.448 & 41.088 & 3.276 & 39.564 & 16.728 & 10.824 & 0.008 & 23.136 & 17.556 & 0.26 \\ \hline
+	61.78 & 5.108 & 0.212 & 0.194 & 2.434 & 377.914 & 189.338 & 2.132 & 9.242& 19.714 \\ \hline
+	139.712 & 0 & 24.206 & 25.806 & 39.942 & 375.584 & 4.494 & 20.43 & 0 & 27.878 \\ \hline
+	23.814 & 70.224 & 0.014 & 39.942 & 32.262 & 1.638 & 37.454 & 5.856 & 4.928 & 9.119\\ \hline
+	54.76 & 9.609& 26.01 & 295.84 & 31.36 & 51.84 & 44.89 & 3.24 & 9.609& 46.24 \\ \hline
+	249.956 & 1.664 & 40.832 & 316.484 & 8.468 & 2.22 & 104.244 & 45.024 & 26.936 & 12.18 \\ \hline
+	14.063 & 15.603 & 13.322 & 211.703 & 45.563 & 3.063 & 4.622 & 44.222 & 2.403 & 3.063 \\ \hline
+	146.652 & 10.956 & 50.552 & 153.512 & 23.136 & 323.64 & 10.956 & 0.168 & 1.188 & 0.168 \\ \hline
+	248.238 & 18.971 & 4.18 & 63.114 & 39.132 & 22.615 & 397.781 & 0.021 & 1.091 &  \\ \hline
+	310.151 & 11.485 & 25.897 & 153.485 & 3.28 & 54.925 & 0.978 & 0 & 24.889 &  \\ \hline
+	29.16 & 17.64 & 53.29 & 39.69 & 0.01 & 1.69 & 6.76 & 5.29 & 56.25 &  \\ \hline
+	131.739 & 56.584 & 0.85 & 20.956 & 11.037 & 7.716 & 15.037 & 2.632 & 86.904 &  \\ \hline
+\end{tabular}
+
+\begin{tikzpicture}
+    \begin{axis}[
+            no markers, domain=4:60, samples=100,
+            axis lines*=left, xlabel=$x$, ylabel=\empty,
+            every axis y label/.style={at=(current axis.above origin),anchor=south},
+            every axis x label/.style={at=(current axis.right of origin),anchor=west},
+            height=6cm, width=12cm,
+            xtick={5.9,49.5}, ytick={\empty},
+            ymax = 0.06,
+            ymin = 0.0,
+            enlargelimits=false, clip=false, axis on top,
+            grid = major,
+            scaled y ticks = false,
+            y tick label style={/pgf/number format/fixed}
+        ]
+        \addplot [very thick,cyan!50!black] {gaussnormal(x,29.24803,7.3439)};
+    \end{axis}
+
+\end{tikzpicture}
+
+\begin{tikzpicture}
+    \begin{axis}[
+            domain=-5:5, 
+            samples=100,
+            ymin=0,
+            axis lines*=left, 
+            xlabel=$x$,
+            every axis y label/.style={at=(current axis.above origin),anchor=south},
+            every axis x label/.style={at=(current axis.right of origin),anchor=west},
+            height=6cm, 
+            width=12cm,
+            xtick=\empty,
+            enlargelimits=false, 
+            clip=false, 
+            axis on top,
+            grid = major,
+        ]
+
+        \addplot [very thick,cyan!50!black] {gaussnormal(x, 0, 1)};
+
+        \pgfmathsetmacro\valueA{gaussnormal(1,0,1)}
+        \pgfmathsetmacro\valueB{gaussnormal(2,0,1)}
+        \pgfmathsetmacro\valueC{gaussnormal(3,0,1)}
+        \draw [gray] (axis cs:-1,0) -- (axis cs:-1,\valueA)
+        (axis cs:1,0) -- (axis cs:1,\valueA);
+        \draw [gray] (axis cs:-2,0) -- (axis cs:-2,\valueB)
+        (axis cs:2,0) -- (axis cs:2,\valueB);
+        \draw [gray] (axis cs:-3,0) -- (axis cs:-3,\valueC)
+        (axis cs:-3,0) -- (axis cs:-3,\valueC);
+        \draw [yshift=1.4cm, latex-latex](axis cs:0, 0) -- node [fill=white] {$0.683$} (axis cs:0, 0);
+        \draw [yshift=0.3cm, latex-latex](axis cs:-2, 0) -- node [fill=white] {$0.954$} (axis cs:2, 0);
+
+        \node[below] at (axis cs:-2, 0)  {$\mu - 2\sigma$}; 
+        \node[below] at (axis cs:-1, 0)  {$\mu - \sigma$}; 
+        \node[below] at (axis cs:0, 0)  {$\mu$}; 
+    \end{axis}
+
+
+\end{tikzpicture}
+
+
+\clearpage
+
+\end{document}
