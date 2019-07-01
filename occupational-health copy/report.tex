@@ -1,0 +1,198 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[paper=a4paper]{geometry}% http://ctan.org/pkg/geometry
+\usepackage[english]{babel}
+\usepackage[T1]{fontenc}
+
+
+\usepackage{fancyvrb}
+\usepackage{multicol}
+\usepackage{lipsum}
+\usepackage{setspace}
+\usepackage{soul}
+\usepackage{fontspec}
+ \usepackage{colortbl}
+\usepackage{background}
+\usepackage{caption}
+\usepackage{pgfgantt}
+\usepackage{graphicx}
+\usepackage[yyyymmdd]{datetime}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usepackage{indentfirst} 
+\usepackage{pgfgantt}
+\usepackage{rotating}
+\usepackage[graphicx]{realboxes}
+\usepackage{tocloft}
+\usepackage{xcolor}
+\usepackage{listings}
+
+\definecolor{mGreen}{rgb}{0,0.6,0}
+\definecolor{mGray}{rgb}{0.5,0.5,0.5}
+\definecolor{mPurple}{rgb}{0.58,0,0.82}
+\definecolor{backgroundColour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{CStyle}{
+    backgroundcolor=\color{backgroundColour},   
+    commentstyle=\color{mGreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{mGray},
+    stringstyle=\color{mPurple},
+    basicstyle=\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=none,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2,
+    language=C
+}
+
+
+
+\newcommand{\listappendicesname}{Appendices}
+\newlistof{appendices}{apc}{\listappendicesname}
+\newcommand{\appendices}[1]{\addcontentsline{apc}{appendices}{#1}}
+
+\newcommand{\newappendix}[1]{\section*{#1}\appendices{#1}}
+
+
+\usepackage{sectsty}
+\usepackage{float}
+%\usepackage[table,xcdraw]{xcolor}
+\sectionfont{\fontsize{24pt}{36}\selectfont}
+\usepackage{tocloft}
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+\usepackage{afterpage}
+
+\usepackage{listings}
+\usepackage{color}
+ 
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+ 
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+ 
+\lstset{style=mystyle}
+\captionsetup{justification=raggedright,singlelinecheck=false}
+
+\newcommand\blankpage{%
+    \null
+    \thispagestyle{empty}%
+    \addtocounter{page}{-1}%
+    \newpage}
+\renewcommand{\baselinestretch}{1.5} 
+
+\usetikzlibrary{calc}
+\newcommand\HRule{\rule{\textwidth}{1pt}}
+
+\setmainfont[Ligatures=TeX]{Times New Roman}
+\newgeometry{top=20mm,bottom=20mm,left=28mm,right=13mm}
+\usepackage[citestyle=ieee]{biblatex}
+\addbibresource{report.bib}
+
+\backgroundsetup{
+color=black,
+scale=1,
+opacity=1,
+angle=0,
+contents={
+\begin{tikzpicture}
+\draw [line width=0.75pt] ($ (current page.north west) + (2.5cm,-1cm) $) rectangle ($ (current page.south east) + (-1cm,1cm) $);
+\draw [line width=0.01pt] ($ (current page.north west) + (0cm,0cm) $) rectangle    ($ (current page.south east) + (0cm,0cm) $); 
+\end{tikzpicture}
+}
+}
+
+\setlength{\footskip}{20pt}
+
+
+\begin{document}
+
+\begin{titlepage}
+
+%\begin{tikzpicture}[remember picture, overlay]
+  %\draw[line width = 1pt] ($(current page.north west) + (25mm,-10mm)$) rectangle ($(current page.south east) + (-25mm,10mm)$);
+%\end{tikzpicture}
+
+\begin{flushright}
+%\textbf{\uppercase{\fontsize{12}{18} \selectfont {Group No: E2}}}
+\end{flushright}
+
+
+\center % Center everything on the page
+{\setstretch{1.5}
+\includegraphics[width=2in,keepaspectratio]{logo.png}\\[0.5cm]
+% \fontsize{16pt}{24}\selectfont \textbf{Project Report}\\[0.5cm]
+\fontsize{24pt}{30}\selectfont \textbf{\uppercase{Assignment - 3}}\\[1.5cm]
+\fontsize{16}{24}\selectfont \textbf{\uppercase{Sustainable and Renewable Energy}}\\[1.5cm]
+\fontsize{16pt}{24}\selectfont \textbf{ETE 3482}\\[0.75cm]
+\fontsize{16pt}{24}\selectfont \textbf{By}\\[0.5cm]
+\fontsize{12pt}{12}\selectfont \textbf { Gnanakeethan Balasubramaniam \\ EGT/16/437}\\[0.5cm]
+
+\vspace*{\fill}
+\fontsize{12pt}{12}\selectfont \textbf {Department of Engineering Technology \\ Faculty of Technology\\University of Sri Jayewardenepura\\ Sri Lanka \\ }
+\vspace*{\fill}
+
+\today
+}
+
+%\vfill % Fill the rest of the page with whitespace
+
+
+\end{titlepage}
+
+
+\pagenumbering{roman}
+\section{Abstract}
+
+\newpage 
+\renewcommand{\baselinestretch}{1}\normalsize
+\tableofcontents
+\renewcommand{\baselinestretch}{1.5}\normalsize
+
+\listoffigures
+ 
+\listoftables
+
+\listofappendices
+
+\newpage
+
+\pagenumbering{arabic}
+%\pagenumbering{gobble}
+\setcounter{page}{1}
+%\addcontentsline{toc}{section}{Unnumbered Section}
+
+
+\section{Introduction}
+Testing things out \cite{display:2015}
+
+\newpage
+%\section*{\textbf{References}}
+
+\printbibliography[nottype=book,heading=bibliography,title={References}]
+
+\end{document}
