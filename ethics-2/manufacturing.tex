@@ -1,0 +1,203 @@
+% !TEX program = xelatex
+\documentclass[12pt,a4paper,oneside]{article}
+
+\usepackage[english]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{multicol}
+\usepackage[a4paper,top=25mm,left=28mm,right=12mm,bottom=25mm]{geometry}
+\usepackage[monochrome]{color}
+\usepackage{fontspec}
+\usepackage{background}
+\usepackage{tocloft}
+\usepackage[nottoc,numbib]{tocbibind}
+\usepackage{fancyhdr}
+\usepackage{fancybox}
+\usepackage{setspace}
+\usepackage{amsmath}
+\usepackage{ccicons}
+\usepackage{anyfontsize}
+\usepackage{lipsum}
+\usepackage{indentfirst}
+\usepackage{soul}
+\usepackage[hidelinks]{hyperref}
+\usepackage{mathtools}
+\usepackage{tikz}
+\usepackage{csquotes}
+\usepackage{wrapfig}
+\usepackage{longtable}
+\usepackage[acronym]{glossaries}
+\usepackage{float}
+\usepackage{pgfplots}
+\usetikzlibrary{calc,positioning}
+\usepackage[
+    backend=biber,
+    style=ieee,
+]{biblatex}
+\addbibresource{manufacturing.bib}
+\usepackage{afterpage}
+\newcommand\blankpage{%
+    \null
+    \thispagestyle{empty}%
+    \addtocounter{page}{-1}%
+    \newpage}
+\setmainfont[Ligatures=TeX]{Times New Roman}
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+
+\pgfmathdeclarefunction{gauss}{2}{%
+    \pgfmathparse{1/(#2*sqrt(2*pi))*exp(-((x-#1)^2)/(2*#2^2))}%
+    }
+
+\pgfmathdeclarefunction{gaussnormal}{3}{%
+  \pgfmathparse{1/(#3*sqrt(2*pi))*exp(-((#1-#2)^2)/(2*#3^2))}%
+}
+
+% Turn on the style
+\pagestyle{fancy}
+% Clear the header and footer
+\fancyhead{}
+\fancyfoot{}
+% Set the right side of the footer to be the page number
+\fancyfoot[C]{\thepage}
+
+\backgroundsetup{
+color=black,
+scale=1,
+opacity=1,
+angle=0,
+contents={
+\begin{tikzpicture}
+\draw [line width=0.75pt] ($ (current page.north west) + (2.5cm,-1cm) $) rectangle ($ (current page.south east) + (-1cm,1cm) $);
+\draw [line width=1pt] ($ (current page.north west) + (0cm,-0cm) $) rectangle    ($ (current page.south east) + (-0cm,0cm) $);
+\end{tikzpicture}
+}
+}
+
+\begin{document}
+
+
+\begin{titlepage}
+%\begin{tikzpicture}[remember picture, overlay]
+  %\draw[line width = 1pt] ($(current page.north west) + (25mm,-10mm)$) rectangle ($(current page.south east) + (-25mm,10mm)$);
+%\end{tikzpicture}
+
+\begin{flushright}
+%\textbf{\uppercase{\fontsize{12}{18} \selectfont {Group No: E2}}}
+\end{flushright}
+
+
+\center % Center everything on the page
+{\setstretch{1.5}
+\includegraphics[width=2in,keepaspectratio]{logo.png}\\[0.5cm]
+% \fontsize{16pt}{24}\selectfont \textbf{Project Report}\\[0.5cm]
+% \fontsize{16pt}{24}\selectfont \textbf{EGT 41206}\\[0.75cm]
+    \fontsize{24pt}{30}\selectfont \textbf{\uppercase{Assignment 4 \& 5}}\\[1.5cm]
+\fontsize{16}{24}\selectfont \textbf{\uppercase{Professional Ethics - ETC 3231}}\\[1.5cm]
+\fontsize{16pt}{24}\selectfont \textbf{By}\\[0.5cm]
+\fontsize{12pt}{12}\selectfont {
+}
+\vspace*{\fill}
+\fontsize{12pt}{12}\selectfont \textbf { Gnanakeethan Balasubramaniam \\ EGT/16/437}\\[0.5cm]
+
+
+\vspace*{\fill}
+\fontsize{12pt}{12}\selectfont \textbf {Department of Engineering Technology \\ Faculty of Technology\\University of Sri Jayewardenepura\\ Sri Lanka \\ }
+\vspace*{\fill}
+
+\today
+}
+
+%\vfill % Fill the rest of the page with whitespace
+
+\end{titlepage}
+
+
+\pagenumbering{roman}
+
+\newpage
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+\setstretch{1.15}
+
+\section{Code of Ethics for a Company}
+
+A code of ethics, also called a code of conduct or ethical code, set out company's value, ethics,
+objectives and responsibilities. A well written code of ethics should also given guidance to
+on how to deal with certain ethical situations. Every code of ethics is different and
+should reflect the company's ethics, values and business style. Some code are short, setting out
+only general guidelines, and others are large manuals, encompassing huge variety of situations.
+
+we can develop code of ethics for any organization. Following points are some examples on
+ethics that we should follow for any organization.
+
+\subsection{Confidentiality and Privacy}
+Many companies and agencies have fallen prey to hackers stealing client information
+proprietary data. Therefore, there is a requirement of code ethics. Employee should maintain
+confidentiality when handling customers' personal or private information. Also include a
+similar policy that relates to the company secrets. Therefore we should train the employees
+on best practices to keep personal information out of the hands of the bad guys.
+
+\subsection{Professional appearance}
+
+Every company should have a dress code or dress policy. This could include a uniform shirt
+for service providers, a suit and tie for account representative or business casual for Fridays.
+So that employees' clothing to be clean and pressed, a cleaning service coming in to
+someone's home appears more professional when the employees show up wearing company
+shirts that are clean.
+
+\subsection{Absence without notice}
+
+Absence from work without permission is an act of misconduct. When an employee is
+absent for one or two days without leave, an employer should require the employee to
+explain the reason for his absence. If he is unable to provide an acceptable reason for the
+absence, a warning letter should be issued.
+
+\subsection{Conflict of interest}
+A company's reputation depend on the actions and integrity of its employees. It is essential
+that they avoid relationships and activities that hurt or appears to hurt, their ability to make
+objective and fair decisions.
+
+
+\subsection{Obeying the law}
+
+If any employees have broken the law either during or after work can affect company brand. Every company requires that all employees, officers, and directors comply with laws, rules and regulations applicable to the business. Whether it's officers, employees, directors or any third party violation of any laws, rules and regulation, it is our responsibility to promptly report the matter to your supervisor.
+
+\subsection{Effective product/outcomes/design}
+Every business shall ensure that their products or outcomes meet highest professional standards possible. Therefore company should try to make products or outcomes of high quality at an acceptable cost and also should work to follow professional standards.  Company should ensure the proper goals and adequate testing of the outcome.
+
+\subsection{Client and employer}
+
+Company should act in a manner that is the best interests of their clients and employers consistent with the public interest. Company should provide service in their areas of competence and also do not use any property of the client or employer in unauthorized way.  They should not use the outcome if it is obtain or retained either illegally or an ethically.
+
+\newpage
+
+ 
+\section{The Role of Whistle Blower}
+
+\begin{itemize}
+\item Whistle-blower have to do his work on time, Otherwise he may be unable do the whistle blowing. 
+\item Delay is not suitable for the whistle blower.
+\item Whistle-blower works to protect their employees, customers and also their organization.
+\item He should makes safe and trustworthy business environment.
+\item Whistle blower should not take hush money.
+\item He takes actions against the mismanagement, illegal, unethical, or other wrong doing.
+\item Internally, a whistle-blower can bring his accusations to the attention of other people within the accused organization such as an immediate supervisor.
+\end{itemize}
+
+
+\section{What are the precautions that the company would take to protect whistle blowers.}
+
+\begin{itemize}
+\item There must be transparent case handling and investigation process and a policy for non retaliation. In order to implement their protection frameworks, companies must make sure that they describe how the whistle blower can remain anonymous while reporting
+\item Provide protective and suitable media for whistle-blowing.
+\item Protect the interest of whistle blowers.
+\item Provide safe environment to their duty.
+\item Implement the whistle blower protection laws. From that, when whistle blowers are protected we can safe guard the public interest and enhanced our business culture.
+\end{itemize}
+
+
+
+\clearpage
+
+
+\end{document}
