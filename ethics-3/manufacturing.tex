@@ -1,0 +1,146 @@
+% !TEX program = xelatex
+\documentclass[12pt,a4paper,oneside]{article}
+
+\usepackage[english]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{multicol}
+\usepackage[a4paper,top=25mm,left=28mm,right=12mm,bottom=25mm]{geometry}
+\usepackage[monochrome]{color}
+\usepackage{fontspec}
+\usepackage{background}
+\usepackage{tocloft}
+\usepackage[nottoc,numbib]{tocbibind}
+\usepackage{fancyhdr}
+\usepackage{fancybox}
+\usepackage{setspace}
+\usepackage{amsmath}
+\usepackage{ccicons}
+\usepackage{anyfontsize}
+\usepackage{lipsum}
+\usepackage{indentfirst}
+\usepackage{soul}
+\usepackage[hidelinks]{hyperref}
+\usepackage{mathtools}
+\usepackage{tikz}
+\usepackage{csquotes}
+\usepackage{wrapfig}
+\usepackage{longtable}
+\usepackage[acronym]{glossaries}
+\usepackage{float}
+\usepackage{pgfplots}
+\usetikzlibrary{calc,positioning}
+\usepackage[
+    backend=biber,
+    style=ieee,
+]{biblatex}
+\addbibresource{manufacturing.bib}
+\usepackage{afterpage}
+\newcommand\blankpage{%
+    \null
+    \thispagestyle{empty}%
+    \addtocounter{page}{-1}%
+    \newpage}
+\setmainfont[Ligatures=TeX]{Times New Roman}
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+
+\pgfmathdeclarefunction{gauss}{2}{%
+    \pgfmathparse{1/(#2*sqrt(2*pi))*exp(-((x-#1)^2)/(2*#2^2))}%
+    }
+
+\pgfmathdeclarefunction{gaussnormal}{3}{%
+  \pgfmathparse{1/(#3*sqrt(2*pi))*exp(-((#1-#2)^2)/(2*#3^2))}%
+}
+
+% Turn on the style
+\pagestyle{fancy}
+% Clear the header and footer
+\fancyhead{}
+\fancyfoot{}
+% Set the right side of the footer to be the page number
+\fancyfoot[C]{\thepage}
+
+\backgroundsetup{
+color=black,
+scale=1,
+opacity=1,
+angle=0,
+contents={
+\begin{tikzpicture}
+\draw [line width=0.75pt] ($ (current page.north west) + (2.5cm,-1cm) $) rectangle ($ (current page.south east) + (-1cm,1cm) $);
+\draw [line width=1pt] ($ (current page.north west) + (0cm,-0cm) $) rectangle    ($ (current page.south east) + (-0cm,0cm) $);
+\end{tikzpicture}
+}
+}
+
+\begin{document}
+
+
+\begin{titlepage}
+%\begin{tikzpicture}[remember picture, overlay]
+  %\draw[line width = 1pt] ($(current page.north west) + (25mm,-10mm)$) rectangle ($(current page.south east) + (-25mm,10mm)$);
+%\end{tikzpicture}
+
+\begin{flushright}
+%\textbf{\uppercase{\fontsize{12}{18} \selectfont {Group No: E2}}}
+\end{flushright}
+
+
+\center % Center everything on the page
+{\setstretch{1.5}
+\includegraphics[width=2in,keepaspectratio]{logo.png}\\[0.5cm]
+% \fontsize{16pt}{24}\selectfont \textbf{Project Report}\\[0.5cm]
+% \fontsize{16pt}{24}\selectfont \textbf{EGT 41206}\\[0.75cm]
+    \fontsize{24pt}{30}\selectfont \textbf{\uppercase{Assignment 4 \& 5}}\\[1.5cm]
+\fontsize{16}{24}\selectfont \textbf{\uppercase{Professional Ethics - ETC 3231}}\\[1.5cm]
+\fontsize{16pt}{24}\selectfont \textbf{By}\\[0.5cm]
+\fontsize{12pt}{12}\selectfont {
+}
+\vspace*{\fill}
+\fontsize{12pt}{12}\selectfont \textbf { Gnanakeethan Balasubramaniam \\ EGT/16/437}\\[0.5cm]
+
+
+\vspace*{\fill}
+\fontsize{12pt}{12}\selectfont \textbf {Department of Engineering Technology \\ Faculty of Technology\\University of Sri Jayewardenepura\\ Sri Lanka \\ }
+\vspace*{\fill}
+
+\today
+}
+
+%\vfill % Fill the rest of the page with whitespace
+
+\end{titlepage}
+
+
+\pagenumbering{roman}
+
+\newpage
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+\setstretch{1.15}
+
+\section{Conflict of Interest and Solutions}
+
+\begin{itemize}
+\item A relative or close friend reports to a supervisor who affects their job responsibilities, salary, and promotions.
+A male manager dates a female employee who reports to him or vice versa.
+\item A lawyer represents a client in a civil dispute while accepting fees from litigants who hold the opposing point of view.
+\item A purchasing agent hires his brother-in-law to provide vending services to the company lunch areas.
+\item An employee starts a company that provides similar services to similar clients as those of her full-time employer. This is especially conflict of interest when an employer has had her sign a non-compete agreement.
+\item An employee who is a member of a company employee selection team fails to disclose that he is related to a job candidate whom the company team is considering for a position.
+\item A manager provides paid consulting services on the weekend to a company customer or supplier.
+\item An employee works part-time in the evening for a company that makes a product that competes with the products of his full-time employer.
+\item A member of the company board of directors accepts fees and provides advice to a company that is in direct competition with the company on whose board of directors he sits.
+\item An HR director decides to investigate a formal charge of sexual harassment, using internal resources that she controls, against a fellow corporate executive whom she has known and worked with professionally for years. This would not constitute a conflict of interest if she hired an external employment law firm to conduct the investigation and recommend disciplinary measures.
+\item A purchasing agent accepts trips and gifts from a vendor and then selects the vendor's products for purchase by the company.
+\item An employee accepts free gifts and free products from a training and development company and then recommends the purchase of these products without comparing them to comparable products from other vendors.
+\item A CFO negotiates an agreement in his employer's best interests for a stock option plan from which he will directly benefit.
+\item A trainer is paid to provide training classes that teach customers how to use the company's software products. He puts up a website that offers his same training on the products as a for-profit enterprise in his spare time. Why would he ever again direct customers needing training to his company's classes?
+\item The manager of a marketing department dated a coworker who is also a manager in the same department. They part ways over time, but when he is promoted to the marketing department director role, she found herself reporting to him. The company was forced to change the reporting chain of the department she managed even though the manager and director were no longer dating. The existence of the former relationship created a potential conflict of interest especially in the eyes of coworkers.
+\item An employee sets up a personal website on which he sells his employer's software products.
+\end{itemize}
+
+\clearpage
+
+
+\end{document}
