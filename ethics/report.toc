@@ -1,0 +1,8 @@
+\babel@toc {english}{}
+\contentsline {section}{\numberline {1}General Behavior}{1}% 
+\contentsline {section}{\numberline {2}In the Classroom}{2}% 
+\contentsline {section}{\numberline {3}During Practical}{3}% 
+\contentsline {section}{\numberline {4}During Field Visits}{4}% 
+\contentsline {section}{\numberline {5}During Examinations}{5}% 
+\contentsline {section}{\numberline {6}Meeting with VC/Dean/Heads}{6}% 
+\contentsline {section}{\numberline {7}Meeting With Lecturers}{7}% 

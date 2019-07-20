@@ -1,0 +1,26 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\babel@toc {english}{}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1}Describe fully the techniques of defining a research problem?}{1}{section.1}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2}What is a research problem?}{2}{section.2}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3}How do you define a research problem?}{2}{section.3}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4}What is the necessity of defining a research problem?}{3}{section.4}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5}Short Notes}{3}{section.5}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.1}Experience Survey}{3}{subsection.5.1}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.2}Pilot Survey}{3}{subsection.5.2}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.3}Components of a Research problem}{3}{subsection.5.3}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.4}Rephrasing the research problem}{4}{subsection.5.4}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6}Task of defining a research problem follows a sequential pattern.}{4}{section.6}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {7}Knowing what data are available often serves to narrow down the problem itself as well as the technique that might be used.}{4}{section.7}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {8}Task of defining a research problem.}{5}{section.8}% 

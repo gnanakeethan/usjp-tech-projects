@@ -1,0 +1,198 @@
+\documentclass[12pt,a4paper,oneside]{article}
+
+\usepackage[english]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{multicol}
+\usepackage[a4paper,top=25mm,left=40mm,right=40mm,bottom=25mm]{geometry}
+\usepackage[monochrome]{color}
+\usepackage{fontspec}
+\usepackage{tocloft}
+\usepackage[nottoc,numbib]{tocbibind}
+\usepackage{fancyhdr}
+\usepackage{fancybox} 
+\usepackage{setspace}
+\usepackage{ccicons}
+\usepackage{anyfontsize}
+\usepackage{lipsum}
+\usepackage{indentfirst}
+\usepackage{soul}
+\usepackage[hidelinks]{hyperref}
+\usepackage{mathtools}   
+\usepackage{tikz}
+\usepackage{csquotes}
+\usepackage{wrapfig}
+\usepackage{longtable}
+\usepackage[acronym]{glossaries}
+\usetikzlibrary{calc}
+\usepackage{float}
+\usepackage[
+    backend=biber,
+    style=ieee,
+]{biblatex}
+\addbibresource{manufacturing.bib}
+\usepackage{afterpage}
+\newcommand\blankpage{%
+    \null
+    \thispagestyle{empty}%
+    \addtocounter{page}{-1}%
+    \newpage}
+\setmainfont[Ligatures=TeX]{Times New Roman}
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+
+
+% Turn on the style
+\pagestyle{fancy}
+% Clear the header and footer
+\fancyhead{}
+\fancyfoot{}
+% Set the right side of the footer to be the page number
+\fancyfoot[R]{\thepage}
+
+\begin{document}
+
+\begin{titlepage}
+\begin{tikzpicture}[remember picture, overlay]
+  \draw[line width = 1pt] ($(current page.north west) + (25mm,-10mm)$) rectangle ($(current page.south east) + (-25mm,10mm)$);
+\end{tikzpicture}
+
+\begin{flushright}
+%\textbf{\uppercase{\fontsize{12}{18} \selectfont {Group No: E2}}}
+\end{flushright}
+
+
+\center % Center everything on the page
+{\setstretch{1.5}
+\includegraphics[width=2in,keepaspectratio]{logo.png}\\[0.5cm]
+% \fontsize{16pt}{24}\selectfont \textbf{Project Report}\\[0.5cm]
+% \fontsize{16pt}{24}\selectfont \textbf{EGT 41206}\\[0.75cm]
+\fontsize{24pt}{30}\selectfont \textbf{\uppercase{Assignment - 02}}\\[1.5cm]
+\fontsize{16}{24}\selectfont \textbf{\uppercase{Research Methodology}}\\[1.5cm]
+\fontsize{16pt}{24}\selectfont \textbf{By}\\[0.5cm]
+\fontsize{12pt}{12}\selectfont {
+}
+\vspace*{\fill}
+\fontsize{12pt}{12}\selectfont \textbf { Gnanakeethan Balasubramaniam \\ EGT/16/437}\\[0.5cm]
+
+
+\vspace*{\fill}
+\fontsize{12pt}{12}\selectfont \textbf {Department of Engineering Technology \\ Faculty of Technology\\University of Sri Jayewardenepura\\ Sri Lanka \\ }
+\vspace*{\fill}
+
+\today
+}
+
+%\vfill % Fill the rest of the page with whitespace
+
+\end{titlepage}
+
+
+\pagenumbering{roman}
+
+\newpage
+\tableofcontents
+
+\newpage
+\pagenumbering{arabic}
+\setcounter{page}{1}
+\setstretch{1.5}
+
+\section{Describe fully the techniques of defining a research problem?}
+
+A research problem is a crucial part of a research. It shall not be done in a hurried manner. Usually, this is frequently overlooked which causes a lot of problem later on the research. The research problem must be defined giving proper weightage to the related topics. The following steps can be followed to achieve a proper one.
+
+\begin{itemize}
+    \item State the problem in a general way \\
+        First the problem must be defined in general terms with context to practical, scientific or intellectual interest. For this the researcher may himself read the concerned subject matter thoroughly or obtain help from a subject matter expert (SME). 
+    \item Understand the nature of the problem\\
+        The problem must be thoroughly understood by the researcher. In order to have a clear understanding he need to consult multiple subject matter experts. In that way they can clarify the origin, and the nature of the problem. 
+    \item Literature Survey\\
+        It is very important for a researcher to review previous publications and research articles in the domain so that they have enough references. This literature survey may help in the future as research unfolds further.
+    \item Brainstorming Session\\
+        The researcher may engage in discussions with colleagues related to the subject. This helps in redefining the project problem and identifying the proper points of the research to be done. The discussions may involve possible solutions as well. 
+    \item Rephrasing to Working Proposition\\ 
+        The researcher must rephrase the problem properly into a working proposition. The rephrased term should be helpful in defining a working hypothesis. 
+
+\end{itemize}
+
+\section{What is a research problem?}
+
+A research problem is a definite or clear expression/statement about an area of concern, a condition to be improved upon, a difficulty to be eliminated, or a troubling question that exists in scholarly literature, in theory, or within existing practice that points to a need for meaningful understanding and deliberate investigation. A research problem does not state how to do something, offer a vague or broad proposition, or present a value question.
+
+\begin{itemize}
+\item Research Objective Must be Specified\\
+The research objective must be clearly specified. It will serve as a proper guide to the research throughout the process. It will consist of two or three concrete goals defined to keep the research to a more constrained to the focus area discussed. 
+
+\item Context of Research Problem
+\\
+The context of the research problem must be properly identified and recorded. It helps in finding people for help as well as in identifying resources for the research. 
+
+\item Good Knowledge of the Research Problem
+\\ 
+The researcher should have a good working knowledge of the research involved. This will ensure that the output of the research is successful. 
+\end{itemize}
+
+\section{How do you define a research problem?}
+A Research problem is defined as a statement which precisely focuses on the purpose of the research. It also serves are the means of finding effective hypothesis.  For example we can take following.
+
+\begin{itemize}
+
+\item Environmental Impact of Noorachcholai Power Plant on Surrounding Natural Water Resources.
+\item Solid Waste Management Procedures by Maharagama Urbal Council
+\item Efficiency of Solar Cells in Arid Zones of Sri Lanka.
+
+
+
+\end{itemize}
+
+\section{What is the necessity of defining a research problem?}
+    The research problem is highly crucial as it will remain as a guide for the research. It will help in forming hypotheses. A properly defined research problem will be highly concentrated on a specific subject matters. 
+
+
+\section{Short Notes}
+\subsection{Experience Survey}
+    It is designed to account the overall satisfaction of group of people who have had shared a common experience. 
+\subsection{Pilot Survey}
+    It is a strategy used to test the questionnaire using a smaller sample than the population/planned sample size.
+\subsection{Components of a Research problem}
+\begin{itemize}
+\item Express question / predicament / demonstrate a need
+\item Identify Consequences \\
+    It should show a persuasive consequences to attract readers to the solution.
+\item Provide the solution. 
+    The response to the problem introduced by the claim. It can be a resolution or a proposed resolution of the issues introduced by the problem statement.
+\end{itemize}
+
+\subsection{Rephrasing the research problem}
+    The means of rephrasing the research problem so that it contains the above components. It will define a problem and provoke a consequence and provide a solution to the problem defined. 
+
+\section{Task of defining a research problem follows a sequential pattern.}
+
+Defining the research problem often follows a sequential pattern.If the ambiguities are resolved, thinking and rethinking process results in a more specific formulation of the problem so that it may be a realistic one in terms of the available data and resources and is also analytically meaningful. All this results in a well defined research problem that is not only meaningful from an operational point of view, but is equally capable of paving the way for the development of working hypotheses and for means of solving the problem itself. And also this is the conclusion of defining the research problem. Such that it is necessary to follow a sequential pattern to define a research problem. 
+
+\textbf{Sequential Pattern is:}
+\begin{itemize}
+ \item Formulating a general idea
+ \item Dissecting the general idea to sub-topics to generate alternate action
+ \item Chose the most interested sub-topcs to base the research
+ \item Develop the research question
+
+\end{itemize}
+
+\section{Knowing what data are available often serves to narrow down the problem itself as well as the technique that might be used.}
+
+\textbf{Explain the underlying area in the above statement in the context of defining a research problem.}
+
+The previous publications must be properly surveyed and examined before definition of a research problem. The researcher must be well aware of the subject they are undertaking. Such that, it is necessary for a  researcher to revise and see through the previous publications or articles on the subject. It will also eliminate the weak points in researcher's concepts. Such that the researcher could arrive in a solid problem statement. 
+
+
+\section{Task of defining a research problem.}
+
+The research problem must be defined along side the bounds within which it is to be studied. Laying down boundaries within which a researcher shall study the problem with a predetermined objective in view. However defining a research problem is a huge task. 
+
+Therefore the research problem / statement must be defined in a systematic manner.
+
+\clearpage
+\addcontentsline{toc}{section}{References}
+\printbibliography
+
+\end{document}

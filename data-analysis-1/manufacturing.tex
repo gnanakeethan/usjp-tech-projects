@@ -3,7 +3,7 @@
 \usepackage[english]{babel}
 \usepackage[T1]{fontenc}
 \usepackage{multicol}
-\usepackage[a4paper,top=25mm,left=25mm,right=10mm,bottom=25mm]{geometry}
+\usepackage[a4paper,top=25mm,left=28mm,right=12mm,bottom=25mm]{geometry}
 \usepackage[monochrome]{color}
 \usepackage{fontspec}
 \usepackage{background}
@@ -12,6 +12,7 @@
 \usepackage{fancyhdr}
 \usepackage{fancybox} 
 \usepackage{setspace}
+\usepackage{amsmath}
 \usepackage{ccicons}
 \usepackage{anyfontsize}
 \usepackage{lipsum}
@@ -88,7 +89,7 @@ contents={
 \includegraphics[width=2in,keepaspectratio]{logo.png}\\[0.5cm]
 % \fontsize{16pt}{24}\selectfont \textbf{Project Report}\\[0.5cm]
 % \fontsize{16pt}{24}\selectfont \textbf{EGT 41206}\\[0.75cm]
-\fontsize{24pt}{30}\selectfont \textbf{\uppercase{Assignment - 1}}\\[1.5cm]
+\fontsize{24pt}{30}\selectfont \textbf{\uppercase{Assignment - 2}}\\[1.5cm]
 \fontsize{16}{24}\selectfont \textbf{\uppercase{Introduction to Environmental Data Analysis}}\\[1.5cm]
 \fontsize{16pt}{24}\selectfont \textbf{By}\\[0.5cm]
 \fontsize{12pt}{12}\selectfont {
@@ -114,54 +115,111 @@ contents={
 \newpage
 \pagenumbering{arabic}
 \setcounter{page}{1}
-\setstretch{1.5}
-\begin{tabular}{ | r | r | r | r | r | r | r | r | r | r | r | r | r | r | r | }
-    \hline
-    & \multicolumn{10}{|c|}{Measurements} & \multicolumn{3}{|c|}{Calculations} \\ \hline
-    \# & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & Mean & S.dev & S. err \\ \hline
-    1 & 33.2 & 35 & 25.5 & 23.6 & 41.8 & 27.3 & 31.8 & 31.4 & 26.4 & 33.4 & 30.94 & 5.41 & 1.71 \\ \hline
-    2 & 38.3 & 37.9 & 26.4 & 23.2 & 39.1 & 36.4 & 30 & 29.9 & 27.9 & 24.4 & 31.35 & 6.07 & 1.92 \\ \hline
-    3 & 33.2 & 35.2 & 30.6 & 22.5 & 24.7 & 25.5 & 28.7 & 33.6 & 24.6 & 29.3 & 28.79 & 4.37 & 1.38 \\ \hline
-    4 & 36.3 & 30.7 & 28.9 & 28 & 30 & 9 & 42.2 & 29.9 & 25.4 & 24 & 28.44 & 8.61& 2.72 \\ \hline
-    5 & 40.6 & 28.8 & 33.7 & 23.7 & 35.1 & 9.4 & 30.9 & 33.3 & 28.8 & 23.5 & 28.78 & 8.55& 2.7 \\ \hline
-    6 & 33.1 & 36.6 & 28.1 & 21.9 & 33.9 & 29.5 & 22.1 & 25.8 & 26 & 25.2 & 28.22 & 5 & 1.58 \\ \hline
-    7 & 37.5 & 27 & 35.2 & 12.9 & 35.7 & 37.3 & 36.8 & 28.3 & 27 & 23.3 & 30.1 & 7.98 & 2.52 \\ \hline
-    8 & 46.2 & 29.1 & 24 & 12.6 & 33.3 & 28.9 & 40.6 & 37.1 & 25.2 & 26.9 & 30.39 & 9.48 & 3 \\ \hline
-    9 & 33 & 33.2 & 25.6 & 14.7 & 36 & 27.5 & 31.4 & 35.9 & 27.7 & 27.5 & 29.25 & 6.3 & 1.99 \\ \hline
-    10 & 37.8 & 29 & 32.8 & 13.3 & 30.5 & 7.7 & 29 & 26.1 & 24.6 & 26.1 & 25.69 & 8.94 & 2.83 \\ \hline
-    11 & 41.6 & 30.2 & 23.8 & 17.9 & 32.1 & 30.6 & 5.9 & 25.7 & 24.8 &  & 25.84 & 9.97 & 3.15 \\ \hline
-    12 & 49.5 & 28.5 & 26.8 & 19.5 & 33.7 & 39.3 & 30.9 & 31.9 & 26.9 &  & 31.89 & 8.55 & 2.7 \\ \hline
-    13 & 36 & 34.8 & 23.3 & 36.9 & 30.5 & 29.3 & 33.2 & 28.3 & 23.1 &  & 30.6 & 5.12 & 1.62 \\ \hline
-    14 & 45.7 & 26.7 & 33.3 & 38.8 & 30.9 & 37 & 38.1 & 32.6 & 24.9 &  & 34.22 & 6.46 & 2.04 \\ \hline
-\end{tabular}
+\setstretch{1.15}
 
+\textbf{1. A series of Trichloroethane concentration ($\mu$g/L) obtained from analysis of groundwater samples taken from a given monitoring well over a several day period listed.}\\
+Find the \\
+a. Pool Standard Deviation \\
+b. Standard Error of Mean for the 9 Sample Set  and 10 Sample Set. \\ 
 
-\begin{tabular}{ | r | r | r | r | r | r | r | r | r | r | }
+\begin{tabular}{ | l | l | l | l | l | l | l | l | l | l | l | }
 \hline
-	5.108 & 16.484 & 29.594 & 53.876 & 117.94 & 13.25 & 0.74 & 0.212 & 20.612 & 6.052 \\ \hline
-	48.303 & 42.903 & 24.502 & 66.422 & 60.063 & 25.503 & 1.822 & 2.102 & 11.902 & 48.302 \\ \hline
-	19.448 & 41.088 & 3.276 & 39.564 & 16.728 & 10.824 & 0.008 & 23.136 & 17.556 & 0.26 \\ \hline
-	61.78 & 5.108 & 0.212 & 0.194 & 2.434 & 377.914 & 189.338 & 2.132 & 9.242& 19.714 \\ \hline
-	139.712 & 0 & 24.206 & 25.806 & 39.942 & 375.584 & 4.494 & 20.43 & 0 & 27.878 \\ \hline
-	23.814 & 70.224 & 0.014 & 39.942 & 32.262 & 1.638 & 37.454 & 5.856 & 4.928 & 9.119\\ \hline
-	54.76 & 9.609& 26.01 & 295.84 & 31.36 & 51.84 & 44.89 & 3.24 & 9.609& 46.24 \\ \hline
-	249.956 & 1.664 & 40.832 & 316.484 & 8.468 & 2.22 & 104.244 & 45.024 & 26.936 & 12.18 \\ \hline
-	14.063 & 15.603 & 13.322 & 211.703 & 45.563 & 3.063 & 4.622 & 44.222 & 2.403 & 3.063 \\ \hline
-	146.652 & 10.956 & 50.552 & 153.512 & 23.136 & 323.64 & 10.956 & 0.168 & 1.188 & 0.168 \\ \hline
-	248.238 & 18.971 & 4.18 & 63.114 & 39.132 & 22.615 & 397.781 & 0.021 & 1.091 &  \\ \hline
-	310.151 & 11.485 & 25.897 & 153.485 & 3.28 & 54.925 & 0.978 & 0 & 24.889 &  \\ \hline
-	29.16 & 17.64 & 53.29 & 39.69 & 0.01 & 1.69 & 6.76 & 5.29 & 56.25 &  \\ \hline
-	131.739 & 56.584 & 0.85 & 20.956 & 11.037 & 7.716 & 15.037 & 2.632 & 86.904 &  \\ \hline
+    Set No &  \multicolumn{10}{|c|}{Measurements}  \\ \hline
+    1 & 33.2 & 35 & 25.5 & 23.6 & 41.8 & 27.3 & 31.8 & 31.4 & 26.4 & 33.4 \\ \hline
+    2 & 38.3 & 37.9 & 26.4 & 23.2 & 39.1 & 36.4 & 30 & 29.9 & 27.9 & 24.4 \\ \hline
+    3 & 33.2 & 35.2 & 30.6 & 22.5 & 24.7 & 25.5 & 28.7 & 33.6 & 24.6 & 29.3 \\ \hline
+    4 & 36.3 & 30.7 & 28.9 & 28 & 30 & 9 & 42.2 & 29.9 & 25.4 & 24 \\ \hline
+    5 & 40.6 & 28.8 & 33.7 & 23.7 & 35.1 & 9.4 & 30.9 & 33.3 & 28.8 & 23.5 \\ \hline
+    6 & 33.1 & 36.6 & 28.1 & 21.9 & 33.9 & 29.5 & 22.1 & 25.8 & 26 & 25.2 \\ \hline
+    7 & 37.5 & 27 & 35.2 & 12.9 & 35.7 & 37.3 & 36.8 & 28.3 & 27 & 23.3 \\ \hline
+    8 & 46.2 & 29.1 & 24 & 12.6 & 33.3 & 28.9 & 40.6 & 37.1 & 25.2 & 26.9 \\ \hline
+    9 & 33 & 33.2 & 25.6 & 14.7 & 36 & 27.5 & 31.4 & 35.9 & 27.7 & 27.5 \\ \hline
+    10 & 37.8 & 29 & 32.8 & 13.3 & 30.5 & 7.7 & 29 & 26.1 & 24.6 & 26.1 \\ \hline
+    11 & 41.6 & 30.2 & 23.8 & 17.9 & 32.1 & 30.6 & 5.9 & 25.7 & 24.8 &  \\ \hline
+    12 & 49.5 & 28.5 & 26.8 & 19.5 & 33.7 & 39.3 & 30.9 & 31.9 & 26.9 &  \\ \hline
+    13 & 36 & 34.8 & 23.3 & 36.9 & 30.5 & 29.3 & 33.2 & 28.3 & 23.1 &  \\ \hline
+    14 & 45.7 & 26.7 & 33.3 & 38.8 & 30.9 & 37 & 38.1 & 32.6 & 24.9 &  \\ \hline
 \end{tabular}
+\\ 
 
+\textbf{Calculations for Mean, Standard Deviation, Standard Error} \\
+\begin{tabular}{ | r | r | r | r | r | r | r | r | r | r | r | r | r | }
+    \hline
+    & \multicolumn{10}{|c|}{Measurements} & \multicolumn{1}{|c|}{Calculations} \\ \hline
+    \# & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & Mean \\ \hline
+    1 & 33.2 & 35 & 25.5 & 23.6 & 41.8 & 27.3 & 31.8 & 31.4 & 26.4 & 33.4 & 30.94 \\ \hline
+    2 & 38.3 & 37.9 & 26.4 & 23.2 & 39.1 & 36.4 & 30 & 29.9 & 27.9 & 24.4 & 31.35 \\ \hline
+    3 & 33.2 & 35.2 & 30.6 & 22.5 & 24.7 & 25.5 & 28.7 & 33.6 & 24.6 & 29.3 & 28.79 \\ \hline
+    4 & 36.3 & 30.7 & 28.9 & 28 & 30 & 9 & 42.2 & 29.9 & 25.4 & 24 & 28.44 \\ \hline
+    5 & 40.6 & 28.8 & 33.7 & 23.7 & 35.1 & 9.4 & 30.9 & 33.3 & 28.8 & 23.5 & 28.78 \\ \hline
+    6 & 33.1 & 36.6 & 28.1 & 21.9 & 33.9 & 29.5 & 22.1 & 25.8 & 26 & 25.2 & 28\\ \hline
+    7 & 37.5 & 27 & 35.2 & 12.9 & 35.7 & 37.3 & 36.8 & 28.3 & 27 & 23.3 & 30.1 \\ \hline
+    8 & 46.2 & 29.1 & 24 & 12.6 & 33.3 & 28.9 & 40.6 & 37.1 & 25.2 & 26.9 & 30\\ \hline
+    9 & 33 & 33.2 & 25.6 & 14.7 & 36 & 27.5 & 31.4 & 35.9 & 27.7 & 27.5 & 29.25 \\ \hline
+    10 & 37.8 & 29 & 32.8 & 13.3 & 30.5 & 7.7 & 29 & 26.1 & 24.6 & 26.1 & 25.69 \\ \hline
+    11 & 41.6 & 30.2 & 23.8 & 17.9 & 32.1 & 30.6 & 5.9 & 25.7 & 24.8 &  & 25.84 \\ \hline
+    12 & 49.5 & 28.5 & 26.8 & 19.5 & 33.7 & 39.3 & 30.9 & 31.9 & 26.9 &  & 31.89 \\ \hline
+    13 & 36 & 34.8 & 23.3 & 36.9 & 30.5 & 29.3 & 33.2 & 28.3 & 23.1 &  & 30.6 \\ \hline
+    14 & 45.7 & 26.7 & 33.3 & 38.8 & 30.9 & 37 & 38.1 & 32.6 & 24.9 &  & 34.22 \\ \hline
+\end{tabular}
+\\
+\newpage
+\textbf{Table of (Observation Value - Mean)$^{2}$}\\
+\begin{tabular}{ |l | r | r | r | r | r | r | r | r | r | r | }
+\hline
+    1 & 5.11 & 16.48 & 29.59 & 53.88 & 117.94 & 13.25 & 0.74 & 0.21 & 20.61 & 6.05 \\ \hline
+    2 & 48.3 & 42.9 & 24.5 & 66.42 & 60.06 & 25.5 & 1.82 & 2.1 & 11.9 & 48.3 \\ \hline
+    3 & 19.45 & 41.09 & 3.28 & 39.56 & 16.73 & 10.82 & 0.01 & 23.14 & 17.56 & 0.26 \\ \hline
+    4 & 61.78 & 5.11 & 0.21 & 0.19 & 2.43 & 377.91 & 189.34 & 2.13 & 9.24 & 19.71 \\ \hline
+    5 & 139.71 & 0 & 24.21 & 25.81 & 39.94 & 375.58 & 4.49 & 20.43 & 0 & 27.88 \\ \hline
+    6 & 23.81 & 70.22 & 0.01 & 39.94 & 32.26 & 1.64 & 37.45 & 5.86 & 4.93 & 9.12 \\ \hline
+    7 & 54.76 & 9.61 & 26.01 & 295.84 & 31.36 & 51.84 & 44.89 & 3.24 & 9.61 & 46.24 \\ \hline
+    8 & 249.96 & 1.66 & 40.83 & 316.48 & 8.47 & 2.22 & 104.24 & 45.02 & 26.94 & 12.18 \\ \hline
+    9 & 14.06 & 15.6 & 13.32 & 211.7 & 45.56 & 3.06 & 4.62 & 44.22 & 2.4 & 3.06 \\ \hline
+    10 &146.65 & 10.96 & 50.55 & 153.51 & 23.14 & 323.64 & 10.96 & 0.17 & 1.19 & 0.17 \\ \hline
+    11 &248.24 & 18.97 & 4.18 & 63.11 & 39.13 & 22.62 & 397.78 & 0.02 & 1.09 &  \\ \hline
+    12 &310.15 & 11.49 & 25.9 & 153.49 & 3.28 & 54.93 & 0.98 & 0 & 24.89 &  \\ \hline
+    13 &29.16 & 17.64 & 53.29 & 39.69 & 0.01 & 1.69 & 6.76 & 5.29 & 56.25 &  \\ \hline
+    14 &131.74 & 56.58 & 0.85 & 20.96 & 11.04 & 7.72 & 15.04 & 2.63 & 86.90 &  \\ \hline
+
+
+	\end{tabular}
+\newline
+\newline
+
+\textbf{Pool Standard Deviation Calculation} \\
+{SUM             = 6702.384} \\
+{MEASUREMENTS    = 136} \\ 
+{SETS            = 14} \\
+{$\sigma_{pool}$ = 7.4120}\\
+\newline
+\newline
+\textbf{Standard Error of Mean for 9 Sample Set}\\
+$\sigma_{error}$  = \(\frac{7.4120}{\sqrt{9}}\) =  2.4706\\
+\newline
+\newline
+\textbf{Standard Error of Mean for 10 Sample Set}\\
+$\sigma_{error}$  = \(\frac{7.4120}{\sqrt{10}}\) =  2.3438\\
+
+\newpage
+
+\textbf{2. A series of trichloroethene concentrations (μg/L) obtained from analysis of a ground water samples taken from a given monitoring well over a several day period are listed. Determine the average, median, and mode of the data. Calculate the standard deviation and express the data in normal distribution. Draw the normal distribution curve relevant for the data and compare this with theoretical normal distribution.}\\
+
+
+\textbf{Calculations:}
+\\
+Standard Deviation ($\sigma$) = 7.3428 \\
+Mean = 29.2480 \\ 
+\begin{figure}[h]
 \begin{tikzpicture}
     \begin{axis}[
             no markers, domain=4:60, samples=100,
             axis lines*=left, xlabel=$x$, ylabel=\empty,
             every axis y label/.style={at=(current axis.above origin),anchor=south},
             every axis x label/.style={at=(current axis.right of origin),anchor=west},
-            height=6cm, width=12cm,
-            xtick={5.9,49.5}, ytick={\empty},
+            height=8cm,
+            width=18cm,
+            xtick={29.24803-3*7.3428,29.24803-2*7.3428,29.2480311-1*7.3428,29.24803,29.24803+1*7.3428,29.24803+2*7.3428,29.24803+3*7.3428}, ytick={\empty},
             ymax = 0.06,
             ymin = 0.0,
             enlargelimits=false, clip=false, axis on top,
@@ -169,22 +227,27 @@ contents={
             scaled y ticks = false,
             y tick label style={/pgf/number format/fixed}
         ]
-        \addplot [very thick,cyan!50!black] {gaussnormal(x,29.24803,7.3439)};
+        \addplot [very thick,cyan!50!black] {gaussnormal(x,29.24803,7.3428)};
     \end{axis}
 
-\end{tikzpicture}
+\end{tikzpicture} 
+\caption{Normal Distribution Curve}
+\end{figure}
 
+
+
+\begin{figure}[h]
 \begin{tikzpicture}
     \begin{axis}[
-            domain=-5:5, 
+            domain=-4.25:4.25, 
             samples=100,
             ymin=0,
             axis lines*=left, 
             xlabel=$x$,
             every axis y label/.style={at=(current axis.above origin),anchor=south},
             every axis x label/.style={at=(current axis.right of origin),anchor=west},
-            height=6cm, 
-            width=12cm,
+            height=8cm, 
+            width=17cm,
             xtick=\empty,
             enlargelimits=false, 
             clip=false, 
@@ -192,8 +255,7 @@ contents={
             grid = major,
         ]
 
-        \addplot [very thick,cyan!50!black] {gaussnormal(x, 0, 1)};
-
+        \addplot [very thick,black] {gaussnormal(x, 0, 1)};
         \pgfmathsetmacro\valueA{gaussnormal(1,0,1)}
         \pgfmathsetmacro\valueB{gaussnormal(2,0,1)}
         \pgfmathsetmacro\valueC{gaussnormal(3,0,1)}
@@ -213,6 +275,19 @@ contents={
 
 
 \end{tikzpicture}
+\caption{Standard Normal Distribution Curve}
+\end{figure}
+
+\newpage 
+The Comparison between these two graphs show that they follow a similar pattern.
+
+As given here, the Standard Normal Distribution defines that 68.3\% of values in the set lie in distance of 1 standard deviation(1$\sigma$) from the mean. 
+The Standard Normal Distribution also defines that 95.4\% of values in the set lie in distance of 2 standard deviations(2$\sigma$) from the mean. 
+
+
+The $\mu$-1$\sigma$ is at 21.9 and 36.59 for the Normal Distribution for the given dataset. Such that,we can say that 68.3\% of data lie between 21.9 and 36.59 boundaries.  
+The $\mu$-2$\sigma$ is at 14.56 and 43.94 for the Normal Distribution for the given dataset. Such that,we can say that 95.4\% of data lie between 14.56 and 43.94 boundaries. 
+Further  calculations and conclusions can be done  on the dataset using Standard Normal Distribution tables with Standard Deviation and the Mean. 
 
 
 \clearpage

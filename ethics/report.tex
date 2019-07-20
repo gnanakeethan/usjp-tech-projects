@@ -1,0 +1,315 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[paper=a4paper]{geometry}% http://ctan.org/pkg/geometry
+\usepackage[english]{babel}
+\usepackage[T1]{fontenc}
+
+
+\usepackage{fancyvrb}
+\usepackage{multicol}
+\usepackage{lipsum}
+\usepackage{setspace}
+\usepackage{soul}
+\usepackage{fontspec}
+\usepackage{background}
+\usepackage{xcolor} %for use in color links
+\usepackage{colortbl}
+\usepackage{caption}
+\usepackage{pgfgantt}
+\usepackage{graphicx}
+\usepackage[yyyymmdd]{datetime}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,shapes,positioning,shadows,trees,calc,tikzmark}
+\usepackage{multirow}
+
+
+\usepackage[edges]{forest}
+\usepackage{indentfirst} 
+\usepackage{pgfgantt}
+\usepackage{rotating}
+\usepackage[graphicx]{realboxes}
+\usepackage{tocloft}
+\usepackage{listings}
+\usepackage{csquotes}
+\definecolor{mGreen}{rgb}{0,0.6,0}
+\definecolor{mGray}{rgb}{0.5,0.5,0.5}
+\definecolor{mPurple}{rgb}{0.58,0,0.82}
+\definecolor{backgroundColour}{rgb}{0.95,0.95,0.92}
+
+
+
+\lstdefinestyle{CStyle}{
+    backgroundcolor=\color{backgroundColour},   
+    commentstyle=\color{mGreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{mGray},
+    stringstyle=\color{mPurple},
+    basicstyle=\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=none,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2,
+    language=C
+}
+
+
+
+\newcommand{\listappendicesname}{Appendices}
+\newlistof{appendices}{apc}{\listappendicesname}
+\newcommand{\appendices}[1]{\addcontentsline{apc}{appendices}{#1}}
+
+\newcommand{\newappendix}[1]{\section*{#1}\appendices{#1}}
+
+
+\usepackage{sectsty}
+\usepackage{float}
+
+\sectionfont{\fontsize{24pt}{36}\selectfont}
+\usepackage{tocloft}
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+\usepackage{afterpage}
+
+\usepackage{listings}
+\usepackage{color}
+ 
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+ 
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+ 
+\lstset{style=mystyle}
+\captionsetup{justification=raggedright,singlelinecheck=false}
+
+\newcommand\blankpage{%
+    \null
+    \thispagestyle{empty}%
+    \addtocounter{page}{-1}%
+    \newpage}
+\renewcommand{\baselinestretch}{1.5} 
+
+\usetikzlibrary{calc}
+\newcommand\HRule{\rule{\textwidth}{1pt}}
+
+\setmainfont[Ligatures=TeX]{Times New Roman}
+\newgeometry{top=25mm,bottom=40mm,left=40mm,right=25mm}
+\usepackage[nottoc,numbib]{tocbibind}
+
+\backgroundsetup{
+color=black,
+scale=1,
+opacity=1,
+angle=0,
+contents={
+\begin{tikzpicture}
+\draw [line width=0.75pt] ($ (current page.north west) + (2.5cm,-1cm) $) rectangle ($ (current page.south east) + (-1cm,1cm) $);
+\draw [line width=0.01pt] ($ (current page.north west) + (0cm,0cm) $) rectangle    ($ (current page.south east) + (0cm,0cm) $); 
+\end{tikzpicture}
+}
+}
+
+\setlength{\footskip}{20pt}
+
+
+\begin{document}
+
+\begin{titlepage}
+\begin{tikzpicture}[remember picture, overlay]
+\draw [line width=0.75pt] ($ (current page.north west) + (2.5cm,-1cm) $) rectangle ($ (current page.south east) + (-1cm,1cm) $);
+\draw [line width=0.01pt] ($ (current page.north west) + (0cm,0cm) $) rectangle    ($ (current page.south east) + (0cm,0cm) $); 
+\end{tikzpicture}
+
+\begin{flushright}
+\textbf{\uppercase{\fontsize{12}{18} \selectfont {Group No: E7}}}
+\end{flushright}
+
+
+\center % Center everything on the page
+{\setstretch{1.2}
+\includegraphics[width=1.8in,height=1.8in,keepaspectratio]{logo.png}\\[0.5cm]
+\fontsize{16pt}{24}\selectfont \textbf{Project Report}\\[0.5cm]
+% \fontsize{16pt}{24}\selectfont \textbf{ETE 2112}\\[0.75cm]
+\fontsize{24pt}{30}\selectfont \textbf{\uppercase{Ethics for University Students}}\\[0.5cm]
+\fontsize{16pt}{24}\selectfont \textbf{By}\\[0.5cm]
+
+
+\vspace*{\fill}
+\fontsize{12pt}{12}\selectfont {
+\bgroup
+\def\arraystretch{1.3}% 
+\begin{tabular}{|c|l|c|}
+        \hline
+        \textbf{Index No} &        \textbf{Name} \\ \hline 
+        
+        EGT/16/425 & Dissanayake H.D.S.C.  \\	\hline
+        EGT/16/437 & Gnanakeethan B.  \\		\hline
+        EGT/16/442 & Hansa R.Y.D. \\ 			\hline
+        EGT/16/451 & Imtiyaz F.A.  \\         \hline
+        EGT/16/461 & Kamalka H.A.B.  \\         \hline
+        EGT/16/471 & Kumara H.M.H.S.  \\         \hline
+        EGT/16/472 & Kumarapelee V.N. \\         \hline
+        EGT/16/474 & Lakshan M.A.L.  \\         \hline
+        EGT/16/482 & Maduwantha G.A.L.  \\         \hline
+        EGT/16/484 & Maduwantha M.I.P.  \\         \hline
+
+\end{tabular}
+\egroup
+}\\[0.5cm]
+
+\vspace*{\fill}
+
+\fontsize{12pt}{12}\selectfont \textbf {Department of Engineering Technology \\ Faculty of Technology\\University of Sri Jayewardenepura\\ Sri Lanka}\\[0.5cm]
+}
+
+\vspace*{\fill}
+
+\end{titlepage}
+
+
+\newpage 
+\renewcommand{\baselinestretch}{1}\normalsize
+\tableofcontents
+
+% \cleardoublepage
+% \phantomsection
+% \addcontentsline{toc}{chapter}{\listfigurename}
+
+\newpage
+
+\pagenumbering{arabic}
+%\pagenumbering{gobble}
+\setcounter{page}{1}
+%\addcontentsline{toc}{section}{Unnumbered Section}
+
+\setcounter{secnumdepth}{3}
+\renewcommand{\baselinestretch}{1.5}\normalsize
+\section{General Behavior}
+
+Human behavior is the response of individuals or groups of humans to internal and external stimuli. It refers to the array of every physical action and observable emotion associated with individuals as well as the human race.  While specific traits of one’s personality and temperament may be more consistent other behaviors will change as one moves from birth through adulthood. In addition to being dictated by age and genetics,behavior driven in part by thoughts and feeling is an insight into individual psyche, revealing among other things attitudes and values social behavior, a subset of human behavior study the considerable influence of social interaction and culture. Additional influences include ethics, social environment, authority, persuasion and coercion.
+ 
+University support the learning well being and safety of all students and collaboration between staff.  Administration of University is responsible for developing a dicipline policy consultation with the academic community. 
+Genrally university studnts must follow these procedure of good behavior. 
+\begin{itemize}
+	\item Should not damage any university property in any manner
+	\item Talk with other students with calm
+	\item Talk with a respectful and non-threatening manner
+	\item Listen to other students ideas
+	\item If a student’s behavior is extremely distractive or dangerous, seek support of University staff. 
+\end{itemize}
+As mentioned facts above must be general behavior of University students. They have seek further behavioral rules in other contexts inside University as well.  
+
+\newpage
+\section{In the Classroom}
+Regardless of discipline, universities face ethical issues inside the classroom around a variety of sensitive topics. There are many forms of ethical inquiries to guide students,
+\begin{itemize}
+	\item Students must be punctual.
+	\item They must be seated properly on time before the lecturer enters the classroom.
+	\item Maintain silence.
+	\item After entering the classroom each student must keep quite. They should not talk with each other, or must not make unnecessary noises.
+	\item Students must not talk to each other while the lecturer conducting the lecture.
+	\item Students must obey the lecturer.
+	\item Students must do what the lecturer requests to do. They must do their homework and assignments and submit them on time.
+	\item Students must not sign for absent colleagues.That is illegal and a bad manner.
+	\item Students must not leave or enter the classroom without the permission of the lecturer.
+	\item Students must ask questions or talk to the lecturer in a polite manner.                         Better to raise your hand and ask the questions clearly and politely
+	\item Do not use cellphones, they must be in silent mode.
+	\item Must concentrate on the lecture and must co-operate to the studies.
+	\item Students must not eat meals.
+\end{itemize}
+
+
+\newpage
+\section{During Practical}
+\begin{itemize}
+\item Should wear personnel protection equipment
+\item Students should ready the practical before 10 minutes
+\item Should not eat, drink or use mobile phones while doing the practical.
+\item Should follow the instructions given by the instructor
+\item Should obey the general rules at the place (laboratory or workshop)
+\item Should not wear silky or loose dresses.
+\item Should wrap the hairs tightly
+\item Should protect the equipment and must handle them carefully
+\item Should not talk with each other noisily
+\item Should follow the correct process
+\item Should know the emergency exit and button
+\item Should not use damaged instruments
+\item Should work in proper environment conditions
+\item Should clean the place before leave
+\end{itemize}
+
+\newpage
+\section{During Field Visits}
+\begin{itemize}
+\item Should obey the rules and regulations provided by the relevant industry or the factory.
+\item Should follow the instructions shown in the manufacturing areas.
+\item Should follow the relevant safety precautions.
+\item Should attend on the relevant venues by the relevant time
+\item Should wear a suitable dress code
+\end{itemize}
+
+\newpage
+\section{During Examinations}
+\begin{itemize}
+\item Student have to be present at the examination hall at least 10 or 15 minutes before starting the exam.
+\item After entering the exam hall, students should go to the seat assigned to them and cannot change it without supervisors permission.
+\item Student must have their Student ID or NIC and admission.
+\item Students will not get any notes with them, when they enter to the examination hall.
+\item Students must be polite in the examination hall.
+\item Student has to follow the instruction in the paper and also supervisors.
+\item Students don’t to do any copy from the answer script of any another student.
+\item Student must obey to the supervisor’s in the examination hall.
+\item Student do not make any disturbing noises in the hall.
+\item Do not eat in the exam hall.
+\item Do not write anything top of the tables in the hall.
+\item Students can not use any personal papers for writing answers.
+\end{itemize}
+
+\newpage
+\section{Meeting with VC/Dean/Heads}
+\begin{itemize}
+\item Should behave in a respectful manner
+\item Should talk politely
+\item Should have a proper attire
+\item Enter the place with Permission
+\item Shall be ready to produce identification if needed
+
+\end{itemize}
+
+\newpage
+\section{Meeting With Lecturers}
+\begin{itemize}
+
+\item Should make the time reserve for the meeting
+\item Should have a proper attire
+\item Do not argue in the meeting
+\item Should listen carefully and silently
+\item Should clarify everything in that duration
+\item Should make the points clearly and shortly.
+\end{itemize}
+
+
+% 
+\end{document}

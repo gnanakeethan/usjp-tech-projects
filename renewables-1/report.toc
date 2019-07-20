@@ -1,0 +1,16 @@
+\babel@toc {english}{}
+\contentsline {section}{\numberline {1}Introduction}{1}% 
+\contentsline {section}{\numberline {2}Vertical axis wind turbines}{2}% 
+\contentsline {section}{\numberline {3}Working mechanism}{3}% 
+\contentsline {section}{\numberline {4}Types of vertical wind turbines}{4}% 
+\contentsline {subsection}{\numberline {4.1}Classified on size}{4}% 
+\contentsline {subsubsection}{\numberline {4.1.1}Small vertical axis wind turbines}{4}% 
+\contentsline {subsubsection}{\numberline {4.1.2}Medium \& large VAWT technologies}{4}% 
+\contentsline {subsection}{\numberline {4.2}Classified based on blade shape}{4}% 
+\contentsline {subsubsection}{\numberline {4.2.1}Darrieus}{4}% 
+\contentsline {subsubsection}{\numberline {4.2.2}Giromill}{5}% 
+\contentsline {subsubsection}{\numberline {4.2.3}Helical Blades}{5}% 
+\contentsline {subsubsection}{\numberline {4.2.4}Cycloturbine}{5}% 
+\contentsline {subsubsection}{\numberline {4.2.5}Savonius}{5}% 
+\contentsline {section}{\numberline {5}Advantages of Vertical Axis Wind Turbines}{6}% 
+\contentsline {section}{\numberline {6}Disadvantages of Vertical Axis Wind Turbines}{7}% 

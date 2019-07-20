@@ -1,0 +1,508 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[paper=a4paper]{geometry}% http://ctan.org/pkg/geometry
+\usepackage[english]{babel}
+\usepackage[T1]{fontenc}
+
+
+\usepackage{fancyvrb}
+\usepackage{multicol}
+\usepackage{lipsum}
+\usepackage{setspace}
+\usepackage{soul}
+\usepackage{fontspec}
+
+\usepackage{xcolor} %for use in color links
+\usepackage{colortbl}
+\usepackage{caption}
+\usepackage{pgfgantt}
+\usepackage{graphicx}
+\usepackage[yyyymmdd]{datetime}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,shapes,positioning,shadows,trees,calc,tikzmark}
+\usepackage{multirow}
+
+
+\usepackage[edges]{forest}
+\usepackage{indentfirst} 
+\usepackage{pgfgantt}
+\usepackage{rotating}
+\usepackage[graphicx]{realboxes}
+\usepackage{tocloft}
+\usepackage{listings}
+\usepackage{csquotes}
+\definecolor{mGreen}{rgb}{0,0.6,0}
+\definecolor{mGray}{rgb}{0.5,0.5,0.5}
+\definecolor{mPurple}{rgb}{0.58,0,0.82}
+\definecolor{backgroundColour}{rgb}{0.95,0.95,0.92}
+
+
+
+\lstdefinestyle{CStyle}{
+    backgroundcolor=\color{backgroundColour},   
+    commentstyle=\color{mGreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{mGray},
+    stringstyle=\color{mPurple},
+    basicstyle=\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=none,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2,
+    language=C
+}
+
+
+
+\newcommand{\listappendicesname}{Appendices}
+\newlistof{appendices}{apc}{\listappendicesname}
+\newcommand{\appendices}[1]{\addcontentsline{apc}{appendices}{#1}}
+
+\newcommand{\newappendix}[1]{\section*{#1}\appendices{#1}}
+
+
+\usepackage{sectsty}
+\usepackage{float}
+
+\sectionfont{\fontsize{24pt}{36}\selectfont}
+\usepackage{tocloft}
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+\usepackage{afterpage}
+
+\usepackage{listings}
+\usepackage{color}
+ 
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+ 
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+ 
+\lstset{style=mystyle}
+\captionsetup{justification=raggedright,singlelinecheck=false}
+
+\newcommand\blankpage{%
+    \null
+    \thispagestyle{empty}%
+    \addtocounter{page}{-1}%
+    \newpage}
+\renewcommand{\baselinestretch}{1.5} 
+
+\usetikzlibrary{calc}
+\newcommand\HRule{\rule{\textwidth}{1pt}}
+
+\setmainfont[Ligatures=TeX]{Times New Roman}
+\newgeometry{top=25mm,bottom=40mm,left=40mm,right=25mm}
+\usepackage[nottoc,numbib]{tocbibind}
+\usepackage{biblatex}
+\addbibresource{report.bib}
+
+
+\DefineBibliographyStrings{english}{%
+  bibliography = {References},
+}
+
+% \backgroundsetup{
+% color=black,
+% scale=1,
+% opacity=1,
+% angle=0,
+% contents={
+% \begin{tikzpicture}
+% \draw [line width=0.75pt] ($ (current page.north west) + (2.5cm,-1cm) $) rectangle ($ (current page.south east) + (-1cm,1cm) $);
+% \draw [line width=0.01pt] ($ (current page.north west) + (0cm,0cm) $) rectangle    ($ (current page.south east) + (0cm,0cm) $); 
+% \end{tikzpicture}
+% }
+% }
+
+\setlength{\footskip}{20pt}
+
+
+\begin{document}
+
+\begin{titlepage}
+\begin{tikzpicture}[remember picture, overlay]
+\draw [line width=0.75pt] ($ (current page.north west) + (2.5cm,-1cm) $) rectangle ($ (current page.south east) + (-1cm,1cm) $);
+\draw [line width=0.01pt] ($ (current page.north west) + (0cm,0cm) $) rectangle    ($ (current page.south east) + (0cm,0cm) $); 
+\end{tikzpicture}
+
+\begin{flushright}
+\textbf{\uppercase{\fontsize{12}{18} \selectfont {Group No: G13}}}
+\end{flushright}
+
+
+\center % Center everything on the page
+{\setstretch{1.2}
+\includegraphics[width=2in,height=2in,keepaspectratio]{logo.png}\\[0.5cm]
+\fontsize{16pt}{24}\selectfont \textbf{Project Report}\\[0.5cm]
+\fontsize{16pt}{24}\selectfont \textbf{ETE 2112}\\[0.75cm]
+\fontsize{24pt}{30}\selectfont \textbf{\uppercase{Retractable Wall Cloth Hanger}}\\[0.5cm]
+\fontsize{16pt}{24}\selectfont \textbf{By}\\[0.5cm]
+
+
+\vspace*{\fill}
+\fontsize{12pt}{12}\selectfont {
+\bgroup
+\def\arraystretch{1.5}% 
+\begin{tabular}{|c|l|c|}
+        \hline
+        \textbf{Index No} &        \textbf{Name} &         \textbf{Marks} \\ \hline 
+        EGT/16/421 & Devasurendra JW & \\
+                \hline
+        EGT/16/425 &  Dissanayake HDSC & \\
+                \hline
+        EGT/16/437 & Gnanakeethan B & \\
+                \hline
+        EGT/16/442 & Hansa RYD & \\
+                \hline
+        EGT/16/451 & Imtiyaz FA & \\
+        \hline
+
+\end{tabular}
+\egroup
+}\\[0.5cm]
+
+\vspace*{\fill}
+
+\fontsize{12pt}{12}\selectfont \textbf {Department of Engineering Technology \\ Faculty of Technology\\University of Sri Jayewardenepura\\ Sri Lanka}\\[0.5cm]
+}
+
+\vspace*{\fill}
+
+\end{titlepage}
+
+\setcounter{secnumdepth}{0}
+
+\pagenumbering{roman}
+\section{Abstract}
+
+The aim of the project is to produce a meaningful product that is useful to our community, students at large. Thus we decided to design a retractable wall cloth hanger. Currently there are some wall cloth hangers, but most of them are inefficient and costly for the use of the students. The result of the design process is to achieve a manufacturable product that is also cost-effective.
+
+\newpage 
+
+\section{Acknowledgments}
+
+We are delighted to thank Mr. Chrishantha Wijenayaka, for lecturing the subject and to guide us through the design process of generic materials. We would like to show our gratitude towards Mr. Isuru Udayanga,(Lecturer-in-charge Computer Aided Design and Drafting) for the lessons in CADD, which greatly shaped this project as well. 
+
+
+
+
+\newpage 
+\renewcommand{\baselinestretch}{2}\normalsize
+\tableofcontents
+
+% \cleardoublepage
+% \phantomsection
+% \addcontentsline{toc}{chapter}{\listfigurename}
+\newpage
+\listoffigures
+ 
+\listoftables
+
+\listofappendices
+
+\newpage
+
+\pagenumbering{arabic}
+%\pagenumbering{gobble}
+\setcounter{page}{1}
+%\addcontentsline{toc}{section}{Unnumbered Section}
+
+\setcounter{secnumdepth}{3}
+
+\section{Introduction}
+\renewcommand{\arraystretch}{1.5} % Default value: 1
+
+
+
+
+\subsection{Background}
+
+Dressing is an integral part of human life thus it is necessary to manage them in a efficient way. As university students we have shortage of places to hang our cloths temporarily to remove the wetness accumulated during the day time. Thus most of the students resort to walls around their hostel/boarding places to put their dresses to dry or using their beds / chairs. It is quite uncomfortable to keep clothes outside the rooms and to keep them in chairs / beds. 
+Thus it is necessary to identify a proper solution to the issue. 
+
+
+\subsection{Problem}
+ 
+The problem we identified is that Students in hostels/boardings do not have a proper mechanism to store their sweaty clothes temporarily to dry them off after returning from outside.
+
+
+
+
+\subsection{Solution}
+As per above mentioned things, we have decided to create a retractable wall cloth hanger. It will be able to fit to a wall and be expandable / shrinkable on purpose while keeping the clothes hanging.The wall cloth hanger will save more space for students and will be a easier to operate as well. It will be cost-effective than most other solutions. It is more durable and has high strength. 
+
+
+\newpage
+
+
+\section{Design Concepts}
+
+
+\subsection{Design Process}
+
+
+According to the model of French;
+
+\begin{itemize}
+\item First we had a problem of arranging clothes in a proper way. For that we decided to have a cloth hanger.
+\item After that we analysed our problem, and found out that the space is also limited and it must bear a lot of weight. 
+\item Then We approached the issue as a whole problem, and created a conceptual design.  
+\item Thereafter we decided to have a retractable wall clothes hanger which is space saving and strong.
+\end{itemize}
+
+ \newpage
+
+\subsection{Functional Analysis}
+
+In the functional analysis, we analyse the major functions of the propsed design of Retractable wall cloth hanger. Thus through this we aim to determine importance of the parts of the design.
+
+\begin{figure}
+\centering
+\caption{Functional Anayslis of Retractable Wall Cloth Hanger}
+   \begin{forest}
+    for tree={% style of tree nodes
+      draw, semithick, rounded corners, drop shadow,
+        top color = black!0,
+     bottom color = black!20,
+       text width = 25mm, text badly centered,
+              % style of tree (edges, distances, direction)
+             edge = {draw, semithick},
+           anchor = east,
+             grow = east,
+    forked edge,            % for forked edge
+            s sep = 12mm,    % sibling distance
+            l sep = 12mm,    % level distance
+         fork sep = 8mm,    % distance from parent to branching point
+               }
+[Retractable Wall Cloth Hanger
+    [Rubber Cover
+        [Grip for Retractability]
+        [Attractiveness]
+    ]
+    [Nut and Bolt
+        [Fixing]
+    ]
+    [Frame
+        [Strength]
+        [Attractiveness]
+        [Hanging Space]
+    ]
+    [Cross Links
+        [Adjustable Sizing]
+        [Space Saving]
+        [Strength]
+    ]
+]
+    \end{forest}
+\end{figure}
+
+
+\newpage
+
+\subsection{Morphological Analysis}
+
+
+Morphological analysis is a technique that can be used to generate additional ideas for product concepts that would not normally spring to mind. The technique involves considering the function of a generic solution to a problem and breaking it down into a number of systems or subfunctions.\cite[p.~77]{morphological-analysis-2014}
+\renewcommand{\arraystretch}{2.5} % Default value: 1
+\begin{table}
+    \caption{Morphological Analysis of Retractable Wall Cloth Hanger}
+
+    \centering
+    \begin{tabular}{|c|l|p{2cm}|p{2cm}|p{2cm}|p{2cm}|}
+        \hline
+        \rowcolor{gray!50}
+        {\color[HTML]{9B9B9B} } \#&  Function & Option 1  & Option 2 & Option 3 & Option 4 \\ \hline
+        {\color[HTML]{9B9B9B} } A& Hanging Method       \tikzmark{a}
+                                 & Hangers              \tikzmark{a1}
+                                 & Rods                 \tikzmark{a3}
+                                 & Hooks                \tikzmark{a2}
+                                 & Springs              \tikzmark{a4}
+                                 \\ \hline
+        {\color[HTML]{9B9B9B} } B& Frame Material       \tikzmark{b}
+                                 & Stainless Steel      \tikzmark{b1}
+                                 & Plastic              \tikzmark{b2}
+                                 & Wood                 \tikzmark{b3}
+                                 & Aluminum             \tikzmark{b4}
+                                 \\ \hline
+        {\color[HTML]{9B9B9B} } C& Frame Fixing method  \tikzmark{c}
+                                 & Welding              \tikzmark{c1}
+                                 & Nut and Bolt         \tikzmark{c3}
+                                 & Riveting             \tikzmark{c2}
+                                 & Glueing              \tikzmark{c4}
+                                 \\ \hline
+        {\color[HTML]{9B9B9B} } D& Cross Link Material  \tikzmark{d}
+                                 & Stainless Steel      \tikzmark{d1}
+                                 & Plastic              \tikzmark{d2}
+                                 & Wood                 \tikzmark{d3}
+                                 & Aluminum             \tikzmark{d4}
+                                 \\ \hline
+        {\color[HTML]{9B9B9B} } E& Cross Link Fixing    \tikzmark{e}
+                                 & Nut and Bolt         \tikzmark{e1}
+                                 & Riveting             \tikzmark{e2}
+                                 & Bearings             \tikzmark{e3}
+                                 &                      \tikzmark{e4}
+                                 \\ \hline
+        {\color[HTML]{9B9B9B} } F& Cross Link Pieces    \tikzmark{f}
+                                 & 1                    \tikzmark{f1}
+                                 & 2                    \tikzmark{f2}
+                                 & 3                    \tikzmark{f3}
+                                 & 4                    \tikzmark{f4}
+                                 \\ \hline
+        {\color[HTML]{9B9B9B} } G& Method of wall fix   \tikzmark{g}
+                                 & Glueing              \tikzmark{g1}
+                                 & Anchor Bolt          \tikzmark{g2}
+                                 & Hooks                \tikzmark{g3}
+                                 &                      \tikzmark{g4}
+                                 \\ \hline
+        {\color[HTML]{9B9B9B} } H& Grip Material        \tikzmark{h}
+                                 & Rubber               \tikzmark{h2}
+                                 & Plastic              \tikzmark{h1}
+                                 & Matte Cloth          \tikzmark{h3}
+                                 &                      \tikzmark{h4}
+                                 \\ \hline
+        {\color[HTML]{9B9B9B} } I& Grip Style(Pattern)  \tikzmark{i}
+                                 & Criss-cross Knurling \tikzmark{i2} 
+                                 & Spiral Knurling      \tikzmark{i1}
+                                 &                      \tikzmark{i3}
+                                 &                      \tikzmark{i4}
+                                 \\ \hline
+
+
+    \end{tabular}
+     \begin{tikzpicture}[overlay, remember picture, yshift=.25\baselineskip]
+     %first option
+    \draw [->,thick,red] ([xshift=-30pt]{pic cs:a3}) -- ([yshift=25pt]{pic cs:b1});
+    \draw [->,thick,red] ([xshift=0pt,yshift=-5pt]{pic cs:b1}) -- ([xshift=-65pt,yshift=25pt]{pic cs:c3});
+    \draw [->,thick,red] ([xshift=-65pt,yshift=-5pt]{pic cs:c3}) -- ([xshift=0pt,yshift=25pt]{pic cs:d1});
+    \draw [->,thick,red] ([xshift=0pt,yshift=-5pt]{pic cs:d1}) -- ([xshift=0pt,yshift=25pt]{pic cs:e1});
+    \draw [->,thick,red] ([xshift=0pt,yshift=-5pt]{pic cs:e1}) -- ([xshift=-10pt,yshift=5pt]{pic cs:f4});
+    \draw [->,thick,red] ([xshift=-10pt,yshift=0pt]{pic cs:f4}) -- ([xshift=20pt,yshift=35pt]{pic cs:g2});
+    \draw [->,thick,red] ([xshift=-5pt,yshift=-5pt]{pic cs:g2}) -- ([xshift=0pt,yshift=5pt]{pic cs:h2});
+    \draw [->,thick,red] ([xshift=0pt,yshift=-5pt]{pic cs:h2}) -- ([xshift=0pt,yshift=5pt]{pic cs:i2});
+
+    \draw [->,thick,red] ([xshift=-40pt,yshift=-5pt]{pic cs:i2}) [bend right] to ([xshift=-50pt,yshift=-30pt]{pic cs:i2});
+    \node[draw,rectangle,inner sep=3mm] at ([xshift=-90pt,yshift=-50pt]{pic cs:i2}) {Design Concept 1};
+
+
+    %2nd option
+    \draw [->,thick,blue] ([xshift=0pt,yshift=0pt]{pic cs:a2})  --  ([xshift=-35pt,yshift=15pt]{pic cs:b4});
+    \draw [->,thick,blue] ([xshift=-50pt,yshift=-5pt]{pic cs:b4})  [bend left] to ([xshift=0pt,yshift=15pt]{pic cs:c2});
+    \draw [->,thick,blue] ([xshift=0pt,yshift=0pt]{pic cs:c2})  [bend right] to  ([xshift=-35pt,yshift=15pt]{pic cs:d4});
+    \draw [->,thick,blue] ([xshift=-50pt,yshift=-5pt]{pic cs:d4})  --  ([xshift=0pt,yshift=15pt]{pic cs:e3});
+    \draw [->,thick,blue] ([xshift=0pt,yshift=0pt]{pic cs:e3})  [bend left] to  ([xshift=10pt,yshift=15pt]{pic cs:f4});
+    \draw [->,thick,blue] ([xshift=10pt,yshift=0pt]{pic cs:f4})  [bend left] to  ([xshift=2pt,yshift=2pt]{pic cs:g3});
+    \draw [->,thick,blue] ([xshift=0pt,yshift=0pt]{pic cs:g3})  --  ([xshift=0pt,yshift=15pt]{pic cs:h1});
+    \draw [->,thick,blue] ([xshift=0pt,yshift=0pt]{pic cs:h1})  --  ([xshift=0pt,yshift=15pt]{pic cs:i1});
+
+    \draw [->,thick,blue] ([xshift=-30pt,yshift=-8pt]{pic cs:i1}) [bend right] to ([xshift=-50pt,yshift=-30pt]{pic cs:i1});
+    \node[draw,rectangle,inner sep=3mm] at ([xshift=-20pt,yshift=-50pt]{pic cs:i1}) {Design Concept 2};
+
+    %3rd option
+    \draw [->,thick,green] ([xshift=0pt,yshift=0pt]{pic cs:a2})  --  ([xshift=0pt,yshift=15pt]{pic cs:b3});
+    \draw [->,thick,green] ([xshift=0pt,yshift=0pt]{pic cs:b3})  --  ([xshift=0pt,yshift=25pt]{pic cs:c3});
+    \draw [->,thick,green] ([xshift=0pt,yshift=0pt]{pic cs:c3})  --  ([xshift=0pt,yshift=15pt]{pic cs:d3});
+    \draw [->,thick,green] ([xshift=0pt,yshift=-5pt]{pic cs:d3})  --  ([xshift=0pt,yshift=25pt]{pic cs:e1});
+    \draw [->,thick,green] ([xshift=5pt,yshift=0pt]{pic cs:e1})  --  ([xshift=-5pt,yshift=15pt]{pic cs:f4});
+    \draw [->,thick,green] ([xshift=-10pt,yshift=-5pt]{pic cs:f4})  --  ([xshift=20pt,yshift=25pt]{pic cs:g2});
+
+    \draw [->,thick,green] ([xshift=5pt,yshift=-5pt]{pic cs:g2}) -- ([xshift=150pt,yshift=-154pt]{pic cs:g2});
+    \node[draw,rectangle,inner sep=3mm] at ([xshift=150pt,yshift=-168pt]{pic cs:g2}) {Design Concept 3};
+
+
+    
+  \end{tikzpicture}
+\end{table}
+
+
+\newpage
+
+
+
+\subsection{Weighted Descision Matrix}
+
+A weighted decision matrix is a tool used to compare alternatives with respect to multiple criteria of different levels of importance. It can be used to rank all the alternatives relative to a “fixed” reference and thus create a partial order fo the alternatives.\cite{weighted-decision-matrix:2018}
+
+\renewcommand{\arraystretch}{3} % Default value: 1
+\begin{table}[hbt!]
+\caption{Weighted Decision Matrix of Retractable Wall Cloth Hanger}
+\centering
+\begin{tabular}{|l|l|l|l|l|l|l|l|}
+\hline
+\multirow{2}{*}{Selection Criteria}                        & \multicolumn{2}{p{40pt}|}{Design Concept 1}                  & \multicolumn{2}{p{40pt}|}{Design Concept 2}                  & \multicolumn{2}{p{40pt}|}{Design Concept 3}                  & \multicolumn{1}{p{20pt}|}{}                         \\ \cline{2-7}
+                                                                                  & \multicolumn{1}{c|}{Rate} & \multicolumn{1}{c|}{Score} & \multicolumn{1}{c|}{Rate} & \multicolumn{1}{c|}{Score} & \multicolumn{1}{c|}{Rate} & \multicolumn{1}{c|}{Score} & \multicolumn{1}{c|}{\multirow{-2}{*}{Weight}} \\ \hline
+Durability                                                                        & 5                         & 1.25                       & 4                         & 1                          & 3                         & .75                        & 25\%                                          \\ \hline
+Ease of Use                                                                       & 5                         & 0.25                       & 4                         & 0.2                        & 3                         & .15                        & 5\%                                           \\ \hline
+Ease of Manufacturing                                                             & 3                         & 0.3                        & 2                         & 0.2                        & 5                         & .5                         & 10\%                                          \\ \hline
+Strength                                                                          & 5                         & 1.25                       & 4                         & 1                          & 4                         & 1                          & 25\%                                          \\ \hline
+Cost                                                                              & 2                         & 0.1                        & 1                         & 0.05                       & 2                         & 0.1                        & 5\%                                           \\ \hline
+Stability                                                                         & 4                         & 0.6                        & 5                         & 0.75                       & 2                         & 0.3                        & 15\%                                          \\ \hline
+Attractiveness                                                                    & 4                         & 0.2                        & 3                         & 0.15                       & 5                         & 0.25                       & 5\%                                           \\ \hline
+Effective                                                                         & 3                         & 0.3                        & 3                         & 0.3                        & 3                         & 0.3                        & 10\%                                          \\ \hline
+Total                                                                             & \multicolumn{2}{c|}{4.25}                              & \multicolumn{2}{c|}{3.65}                              & \multicolumn{2}{c|}{3.35}                              &                                               \\ \hline
+Rank                                                                              & \multicolumn{2}{c|}{1}                                 & \multicolumn{2}{c|}{2}                                 & \multicolumn{2}{c|}{3}                                 &                                               \\ \hline
+Develop                                                                           & \multicolumn{2}{c|}{Yes}                               & \multicolumn{2}{c|}{No}                                & \multicolumn{2}{c|}{No}                                &                                               \\ \hline
+\end{tabular}
+\end{table}
+\newpage
+
+\begin{table}[hbt!]
+\caption{Weighted Design Matrix Legend}
+\begin{tabular}{|c|l|}
+\hline
+Rate & Decision \\ \hline
+1 & Not Satisfactory \\ \hline
+2 & Satisfactory \\\hline
+3 & Good \\\hline
+4 & Very Good \\\hline
+5 & Excellent \\\hline
+\end{tabular}
+\end{table}
+% \newpage
+\newpage
+
+\section{Proposed Design}
+
+
+\subsection{Dimensions}
+
+\begin{tabular}{ccc}
+Expanded Length    &  =  & 1 meter \\
+Retracted Length  & = & 50 cm \\
+Length of Rod & = & 80cm \\
+% Distance Between Cross Links When open  & = & \\
+\end{tabular}
+
+\subsection{3D Design}
+\begin{figure}[hbt!]
+\caption{3D Photo of the Retractable Wall Clothes Hanger}
+\includegraphics[width=5in,keepaspectratio]{3dphoto.jpg}\\[0.5cm]
+\end{figure}
+
+
+\printbibliography[heading=bibintoc,title={References}]
+% 
+\end{document}
