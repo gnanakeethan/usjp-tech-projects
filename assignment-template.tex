@@ -8,6 +8,7 @@
 \usepackage{fancybox} 
 \usepackage{anyfontsize}
 \usepackage{lipsum}
+\usepackage{lmodern}
 \usepackage{indentfirst}
 \usepackage{soul}
 \usepackage{tikz}
@@ -29,7 +30,7 @@ opacity=1,
 angle=0,
 contents={
 \begin{tikzpicture}
-\draw [line width=0.75pt] ($ (current page.north west) + (2.5cm,-1cm) $) rectangle ($ (current page.south east) + (-1cm,1cm) $);
+\draw [line width=0.75pt] ($ (current page.north west) + (1.5cm,-1cm) $) rectangle ($ (current page.south east) + (-1cm,1cm) $);
 \draw [line width=1pt] ($ (current page.north west) + (0cm,-0cm) $) rectangle    ($ (current page.south east) + (-0cm,0cm) $); 
 \end{tikzpicture}
 }
@@ -40,45 +41,43 @@ contents={
 \begin{titlepage}
 	
 	\begin{flushright}
-        \textbf{\uppercase{\fontsize{12}{18} \selectfont {Assignment No: 01}}}
+        %\textbf{\uppercase{\fontsize{12}{18} \selectfont {Assignment No: 01}}}
     \end{flushright}
 
     \vspace*{\fill}
     \begin{center}
-        \uppercase{\fontsize{22}{45}\selectfont \ul{ENERGY EFFICIENCY AND CONSERVATION TECHNIQUES - ETE 3493}}\\
+        \uppercase{\fontsize{10mm}{16mm}\selectfont \ul{TIMBER BEAM TEST}}\\
+    \end{center}
+    \begin{center}
+        \uppercase{\fontsize{8mm}{16mm}\selectfont \ul{ETE 3163 Mechanics of Materials}}\\
     \end{center}
     \vfill % equivalent to \vspace{\fill}
-    \begin{multicols}{2}
-        % \noindent\textbf{\underline{INSTRUCTED BY:}} \\Instructor's Name
-        .
-        \\
 
-        \columnbreak	
+  \begin{minipage}{0.45\linewidth}
+      .
+  \end{minipage}
+  \begin{minipage}{0.55\linewidth}
+
+        \fontsize{4.8mm}{5mm} \selectfont
         \begin{tabular}{ll}
-            \vspace{6pt}
-
-            \textbf{\uppercase{\underline{Name}}}       &
-            \textbf{\uppercase{\fontsize{12}{18} \selectfont {:}}} 
-            {\fontsize{12}{18} \selectfont {B Gnanakeethan}}      \\
-
-            \vspace{6pt}
-            \textbf{\uppercase{\underline{Department}}} &
-            \textbf{\uppercase{\fontsize{12}{18} \selectfont {:}}} 
-            {\fontsize{12}{18} \selectfont {Eng. Tech}}\\
-
-            \vspace{6pt}
-            \textbf{\uppercase{\underline{Index No}}}   &
-            \textbf{\uppercase{\fontsize{12}{18} \selectfont {:}}} 
-            {\fontsize{12}{18} \selectfont {EGT/16/437}}  \\
-
-            \vspace{6pt}
-            \textbf{\uppercase{\underline{Date of Sub}}}   &
-            \textbf{\uppercase{\fontsize{12}{18} \selectfont {:}}} 
-            {\fontsize{12}{18} \selectfont {17/07/2019}}  \\
-
-
+            \vspace{4mm}
+            \textbf{\uppercase{{Name}}}       &
+            \textbf{\uppercase{:}} 
+            \uppercase{\selectfont {B Gnanakeethan}}      \\
+            \vspace{4mm}
+            \textbf{\uppercase{{Index No}}}   &
+            \textbf{\uppercase{:}} 
+            \uppercase{EGT/16/437}  \\
+            \vspace{4mm}
+            \textbf{\uppercase{{Group}}} &
+            \textbf{\uppercase{:}} 
+            \uppercase{D3}\\
+            \vspace{4mm}
+            \textbf{\uppercase{{Date of Per}}}   &
+            \textbf{\uppercase{:}} 
+            \uppercase{06/07/19}  \\
         \end{tabular}
-    \end{multicols}
+  \end{minipage}
 
 \end{titlepage}
 
